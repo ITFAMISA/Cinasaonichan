@@ -86,6 +86,10 @@
                         <i class="fas fa-file-pdf"></i>
                         <span>PDFs</span>
                     </a>
+                    <a href="<?php echo BASE_PATH; ?>/empleados.php" class="nav-link-custom <?php echo (basename($_SERVER['PHP_SELF']) == 'empleados.php' || basename($_SERVER['PHP_SELF']) == 'empleados_detalle.php') ? 'active' : ''; ?>">
+                        <i class="fas fa-users"></i>
+                        <span>Empleados</span>
+                    </a>
 
                     <!-- Separator -->
                     <div class="h-8 w-px bg-white/20 mx-2"></div>
@@ -149,6 +153,10 @@
                     <a href="<?php echo BASE_PATH; ?>/pdf_ordenes.php" class="mobile-nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'pdf_ordenes.php') ? 'active' : ''; ?>">
                         <i class="fas fa-file-pdf"></i>
                         <span>PDFs</span>
+                    </a>
+                    <a href="<?php echo BASE_PATH; ?>/empleados.php" class="mobile-nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'empleados.php' || basename($_SERVER['PHP_SELF']) == 'empleados_detalle.php') ? 'active' : ''; ?>">
+                        <i class="fas fa-users"></i>
+                        <span>Empleados</span>
                     </a>
 
                     <div class="border-t border-white/20 my-2"></div>

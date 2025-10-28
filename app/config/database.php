@@ -3,7 +3,7 @@
 
 $db_host = "localhost";
 $db_user = "root";
-$db_pass = "";
+$db_pass = "fami123.";
 $db_name = "clientes_db";
 $db_charset = "utf8mb4";
 
