@@ -494,14 +494,17 @@
 
         const modal = new bootstrap.Modal(document.getElementById('modalEmpleado'));
 
-        // Si es edición, cargar datos
-        if (empleadoId) {
-            cargarDatosEmpleado(empleadoId);
-        }
-
+        // Agregar listener al botón guardar
         document.getElementById('btnGuardarEmpleado').addEventListener('click', function() {
             guardarEmpleado(empleadoId);
         });
+
+        // Si es edición, cargar datos con un pequeño delay para asegurar que el DOM está listo
+        if (empleadoId) {
+            setTimeout(() => {
+                cargarDatosEmpleado(empleadoId);
+            }, 100);
+        }
 
         modal.show();
     }
