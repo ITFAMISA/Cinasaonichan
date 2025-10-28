@@ -222,8 +222,13 @@
                             <h5 class="modal-title">${escapeHtml(titulo)}</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body" style="max-height: 600px; overflow-y: auto;">
                             <form id="formEmpleado">
+                                <!-- INFORMACIÓN GENERAL -->
+                                <div class="mb-3">
+                                    <h6 class="text-primary fw-bold border-bottom pb-2">Información General</h6>
+                                </div>
+
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <label for="nombre" class="form-label">Nombre <span class="text-danger">*</span></label>
@@ -246,6 +251,11 @@
                                     </div>
                                 </div>
 
+                                <!-- CONTACTO -->
+                                <div class="mb-3 mt-4">
+                                    <h6 class="text-primary fw-bold border-bottom pb-2">Información de Contacto</h6>
+                                </div>
+
                                 <div class="row mb-3">
                                     <div class="col-md-6">
                                         <label for="correo" class="form-label">Correo</label>
@@ -255,6 +265,122 @@
                                         <label for="telefono" class="form-label">Teléfono</label>
                                         <input type="tel" class="form-control" id="telefono" name="telefono">
                                     </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="telefono_extension" class="form-label">Extensión</label>
+                                        <input type="text" class="form-control" id="telefono_extension" name="telefono_extension">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="direccion" class="form-label">Dirección</label>
+                                        <input type="text" class="form-control" id="direccion" name="direccion">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <label for="ciudad" class="form-label">Ciudad</label>
+                                        <input type="text" class="form-control" id="ciudad" name="ciudad">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="estado" class="form-label">Estado</label>
+                                        <input type="text" class="form-control" id="estado" name="estado">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="codigo_postal" class="form-label">CP</label>
+                                        <input type="text" class="form-control" id="codigo_postal" name="codigo_postal">
+                                    </div>
+                                </div>
+
+                                <!-- INFORMACIÓN PERSONAL -->
+                                <div class="mb-3 mt-4">
+                                    <h6 class="text-primary fw-bold border-bottom pb-2">Información Personal</h6>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="fecha_nacimiento" class="form-label">Fecha Nacimiento</label>
+                                        <input type="date" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="genero" class="form-label">Género</label>
+                                        <select class="form-select" id="genero" name="genero">
+                                            <option value="">Seleccionar</option>
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Femenino</option>
+                                            <option value="Otro">Otro</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="estado_civil" class="form-label">Estado Civil</label>
+                                        <select class="form-select" id="estado_civil" name="estado_civil">
+                                            <option value="">Seleccionar</option>
+                                            <option value="Soltero">Soltero</option>
+                                            <option value="Casado">Casado</option>
+                                            <option value="Divorciado">Divorciado</option>
+                                            <option value="Viudo">Viudo</option>
+                                            <option value="Unión Libre">Unión Libre</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="cantidad_dependientes" class="form-label">Dependientes</label>
+                                        <input type="number" class="form-control" id="cantidad_dependientes" name="cantidad_dependientes" min="0">
+                                    </div>
+                                </div>
+
+                                <!-- IDENTIFICACIÓN -->
+                                <div class="mb-3 mt-4">
+                                    <h6 class="text-primary fw-bold border-bottom pb-2">Identificación</h6>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="tipo_identificacion" class="form-label">Tipo ID</label>
+                                        <input type="text" class="form-control" id="tipo_identificacion" name="tipo_identificacion" placeholder="RFC, INE, Pasaporte, etc.">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="numero_identificacion" class="form-label">Número</label>
+                                        <input type="text" class="form-control" id="numero_identificacion" name="numero_identificacion">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <label for="numero_seguro_social" class="form-label">Seguro Social</label>
+                                        <input type="text" class="form-control" id="numero_seguro_social" name="numero_seguro_social">
+                                    </div>
+                                </div>
+
+                                <!-- INFORMACIÓN BANCARIA -->
+                                <div class="mb-3 mt-4">
+                                    <h6 class="text-primary fw-bold border-bottom pb-2">Información Bancaria</h6>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="banco" class="form-label">Banco</label>
+                                        <input type="text" class="form-control" id="banco" name="banco">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="cuenta_bancaria" class="form-label">Cuenta</label>
+                                        <input type="text" class="form-control" id="cuenta_bancaria" name="cuenta_bancaria">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <label for="clabe" class="form-label">CLABE</label>
+                                        <input type="text" class="form-control" id="clabe" name="clabe" placeholder="18 dígitos">
+                                    </div>
+                                </div>
+
+                                <!-- INFORMACIÓN LABORAL -->
+                                <div class="mb-3 mt-4">
+                                    <h6 class="text-primary fw-bold border-bottom pb-2">Información Laboral</h6>
                                 </div>
 
                                 <div class="row mb-3">
@@ -274,6 +400,44 @@
                                         <input type="number" class="form-control" id="salario_base" name="salario_base" step="0.01">
                                     </div>
                                     <div class="col-md-6">
+                                        <label for="tipo_contrato" class="form-label">Tipo Contrato</label>
+                                        <input type="text" class="form-control" id="tipo_contrato" name="tipo_contrato" placeholder="Ej: Tiempo Indeterminado">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="fecha_contrato" class="form-label">Fecha Contrato</label>
+                                        <input type="date" class="form-control" id="fecha_contrato" name="fecha_contrato">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="supervisor_directo_id" class="form-label">Supervisor Directo</label>
+                                        <input type="number" class="form-control" id="supervisor_directo_id" name="supervisor_directo_id">
+                                    </div>
+                                </div>
+
+                                <!-- CONTACTO DE EMERGENCIA -->
+                                <div class="mb-3 mt-4">
+                                    <h6 class="text-primary fw-bold border-bottom pb-2">Contacto de Emergencia</h6>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="contacto_emergencia_nombre" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="contacto_emergencia_nombre" name="contacto_emergencia_nombre">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="contacto_emergencia_relacion" class="form-label">Relación</label>
+                                        <input type="text" class="form-control" id="contacto_emergencia_relacion" name="contacto_emergencia_relacion" placeholder="Ej: Esposa, Padre, etc.">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="contacto_emergencia_telefono" class="form-label">Teléfono</label>
+                                        <input type="tel" class="form-control" id="contacto_emergencia_telefono" name="contacto_emergencia_telefono">
+                                    </div>
+                                    <div class="col-md-6">
                                         <label for="estatus_empleado" class="form-label">Estatus</label>
                                         <select class="form-select" id="estatus_empleado" name="estatus_empleado">
                                             <option value="activo">Activo</option>
@@ -285,20 +449,29 @@
                                     </div>
                                 </div>
 
+                                <!-- EDUCACIÓN Y OTROS -->
+                                <div class="mb-3 mt-4">
+                                    <h6 class="text-primary fw-bold border-bottom pb-2">Educación y Otros</h6>
+                                </div>
+
                                 <div class="row mb-3">
                                     <div class="col-md-6">
-                                        <label for="tipo_contrato" class="form-label">Tipo Contrato</label>
-                                        <input type="text" class="form-control" id="tipo_contrato" name="tipo_contrato" placeholder="Ej: Tiempo Indeterminado">
+                                        <label for="nivel_escolaridad" class="form-label">Nivel Escolaridad</label>
+                                        <input type="text" class="form-control" id="nivel_escolaridad" name="nivel_escolaridad">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="fecha_contrato" class="form-label">Fecha Contrato</label>
-                                        <input type="date" class="form-control" id="fecha_contrato" name="fecha_contrato">
+                                        <label for="especialidad" class="form-label">Especialidad</label>
+                                        <input type="text" class="form-control" id="especialidad" name="especialidad">
                                     </div>
                                 </div>
 
+                                <!-- OBSERVACIONES -->
+                                <div class="mb-3 mt-4">
+                                    <h6 class="text-primary fw-bold border-bottom pb-2">Observaciones</h6>
+                                </div>
+
                                 <div class="mb-3">
-                                    <label for="observaciones" class="form-label">Observaciones</label>
-                                    <textarea class="form-control" id="observaciones" name="observaciones" rows="3"></textarea>
+                                    <textarea class="form-control" id="observaciones" name="observaciones" rows="3" placeholder="Notas adicionales..."></textarea>
                                 </div>
                             </form>
                         </div>
@@ -339,18 +512,56 @@
             .then(data => {
                 if (data.success) {
                     const empleado = data.data;
+                    // Información General
                     document.getElementById('nombre').value = empleado.nombre || '';
                     document.getElementById('apellido').value = empleado.apellido || '';
                     document.getElementById('puesto').value = empleado.puesto || '';
                     document.getElementById('numero_empleado').value = empleado.numero_empleado || '';
+
+                    // Contacto
                     document.getElementById('correo').value = empleado.correo || '';
                     document.getElementById('telefono').value = empleado.telefono || '';
+                    document.getElementById('telefono_extension').value = empleado.telefono_extension || '';
+                    document.getElementById('direccion').value = empleado.direccion || '';
+                    document.getElementById('ciudad').value = empleado.ciudad || '';
+                    document.getElementById('estado').value = empleado.estado || '';
+                    document.getElementById('codigo_postal').value = empleado.codigo_postal || '';
+
+                    // Personal
+                    document.getElementById('fecha_nacimiento').value = empleado.fecha_nacimiento || '';
+                    document.getElementById('genero').value = empleado.genero || '';
+                    document.getElementById('estado_civil').value = empleado.estado_civil || '';
+                    document.getElementById('cantidad_dependientes').value = empleado.cantidad_dependientes || 0;
+
+                    // Identificación
+                    document.getElementById('tipo_identificacion').value = empleado.tipo_identificacion || '';
+                    document.getElementById('numero_identificacion').value = empleado.numero_identificacion || '';
+                    document.getElementById('numero_seguro_social').value = empleado.numero_seguro_social || '';
+
+                    // Bancaria
+                    document.getElementById('banco').value = empleado.banco || '';
+                    document.getElementById('cuenta_bancaria').value = empleado.cuenta_bancaria || '';
+                    document.getElementById('clabe').value = empleado.clabe || '';
+
+                    // Laboral
                     document.getElementById('departamento').value = empleado.departamento || '';
                     document.getElementById('fecha_ingreso').value = empleado.fecha_ingreso || '';
                     document.getElementById('salario_base').value = empleado.salario_base || '';
-                    document.getElementById('estatus_empleado').value = empleado.estatus_empleado || 'activo';
                     document.getElementById('tipo_contrato').value = empleado.tipo_contrato || '';
                     document.getElementById('fecha_contrato').value = empleado.fecha_contrato || '';
+                    document.getElementById('supervisor_directo_id').value = empleado.supervisor_directo_id || '';
+
+                    // Emergencia
+                    document.getElementById('contacto_emergencia_nombre').value = empleado.contacto_emergencia_nombre || '';
+                    document.getElementById('contacto_emergencia_relacion').value = empleado.contacto_emergencia_relacion || '';
+                    document.getElementById('contacto_emergencia_telefono').value = empleado.contacto_emergencia_telefono || '';
+
+                    // Educación
+                    document.getElementById('nivel_escolaridad').value = empleado.nivel_escolaridad || '';
+                    document.getElementById('especialidad').value = empleado.especialidad || '';
+
+                    // Estatus y Observaciones
+                    document.getElementById('estatus_empleado').value = empleado.estatus_empleado || 'activo';
                     document.getElementById('observaciones').value = empleado.observaciones || '';
                 } else {
                     mostrarError('Error al cargar los datos del empleado');
