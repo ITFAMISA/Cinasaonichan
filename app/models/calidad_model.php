@@ -62,14 +62,17 @@ class CalidadModel {
         // Formato: PROD-YYYY-MM-DD-XXXXX
         $fecha_formateada = date('Y-m-d', strtotime($fecha));
 
-        // Obtener el siguiente número secuencial para esta fecha
-        $sql = "SELECT COUNT(*) as total FROM piezas_producidas
-                WHERE DATE(fecha_creacion) = :fecha";
+        // Obtener el siguiente número secuencial para esta fecha usando FOR UPDATE para evitar race conditions
+        $sql = "SELECT COALESCE(MAX(CAST(SUBSTRING(folio_pieza, -5) AS UNSIGNED)), 0) as ultimo_numero
+                FROM piezas_producidas
+                WHERE folio_pieza LIKE :patron
+                FOR UPDATE";
         $stmt = $this->pdo->prepare($sql);
-        $stmt->bindValue(':fecha', $fecha_formateada);
+        $patron = 'PROD-' . $fecha_formateada . '-%';
+        $stmt->bindValue(':patron', $patron);
         $stmt->execute();
         $resultado = $stmt->fetch();
-        $numero = $resultado['total'] + 1;
+        $numero = ($resultado['ultimo_numero'] ?? 0) + 1;
 
         $folio = 'PROD-' . $fecha_formateada . '-' . str_pad($numero, 5, '0', STR_PAD_LEFT);
 
@@ -91,7 +94,7 @@ class CalidadModel {
     }
 
     // Crear múltiples piezas producidas (lote)
-    public function crearPiezasProducidas($produccion_id, $cantidad) {
+    public function crearPiezasProducidas($produccion_id, $cantidad, $supervisor = null) {
         try {
             $this->pdo->beginTransaction();
 
@@ -99,7 +102,19 @@ class CalidadModel {
             $produccion = $this->obtenerDetallesProduccion($produccion_id);
 
             if (!$produccion) {
-                throw new Exception('Producción no encontrada');
+                throw new Exception('Producción ID ' . $produccion_id . ' no encontrada');
+            }
+
+            // Si no se proporciona supervisor, obtener del historial más reciente
+            if (empty($supervisor)) {
+                $sql_super = "SELECT supervisor FROM produccion_historial
+                             WHERE produccion_id = :produccion_id
+                             ORDER BY fecha_registro DESC LIMIT 1";
+                $stmt_super = $this->pdo->prepare($sql_super);
+                $stmt_super->bindValue(':produccion_id', $produccion_id, PDO::PARAM_INT);
+                $stmt_super->execute();
+                $historial = $stmt_super->fetch();
+                $supervisor = $historial['supervisor'] ?? 'Sin asignar';
             }
 
             $piezas_creadas = [];
@@ -115,7 +130,7 @@ class CalidadModel {
                     ':numero_pedido' => $produccion['numero_pedido'],
                     ':item_code' => $produccion['item_code'],
                     ':descripcion' => $produccion['descripcion'],
-                    ':supervisor_produccion' => $produccion['supervisor'] ?? 'Sin asignar',
+                    ':supervisor_produccion' => $supervisor,
                     ':fecha_produccion' => date('Y-m-d'),
                     ':estatus' => 'por_inspeccionar'
                 ];
@@ -130,7 +145,9 @@ class CalidadModel {
 
                 $stmt = $this->pdo->prepare($sql);
                 if (!$stmt->execute($datos)) {
-                    throw new Exception('Error al crear pieza');
+                    $errorInfo = $stmt->errorInfo();
+                    throw new Exception('Error al crear pieza ' . ($i + 1) . ' de ' . $cantidad .
+                                      ' (folio: ' . $folio . '): ' . $errorInfo[2]);
                 }
 
                 $piezas_creadas[] = $folio;
@@ -140,8 +157,10 @@ class CalidadModel {
             return $piezas_creadas;
 
         } catch (Exception $e) {
-            $this->pdo->rollBack();
-            throw $e;
+            if ($this->pdo->inTransaction()) {
+                $this->pdo->rollBack();
+            }
+            throw new Exception('Error creando piezas para producción ID ' . $produccion_id . ': ' . $e->getMessage());
         }
     }
 

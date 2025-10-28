@@ -83,13 +83,24 @@ try {
         try {
             // Redondear cantidad para crear piezas enteras
             $cantidadPiezas = max(1, round($cantidadHoy));
-            $piezasCreadas = $calidadModel->crearPiezasProducidas($id, $cantidadPiezas);
+            $supervisor = $_POST['supervisor'] ?? null;
+            $piezasCreadas = $calidadModel->crearPiezasProducidas($id, $cantidadPiezas, $supervisor);
             error_log("Se crearon " . count($piezasCreadas) . " piezas para producción ID: " . $id . " (cantidad producida: " . $cantidadHoy . ")");
+
+            // Actualizar estado de calidad en la tabla de producción
+            $model->actualizarEstadoCalidad($id);
         } catch (Exception $e) {
-            error_log("Error creando piezas: " . $e->getMessage());
+            $mensajeError = "Error creando piezas para calidad: " . $e->getMessage();
+            error_log($mensajeError);
             error_log("Stack trace: " . $e->getTraceAsString());
-            // No interrumpir el flujo si hay error en piezas
-            // NOTA: Las piezas no se crearon pero la producción sí se registró
+
+            // Retornar error al usuario para que sepa que las piezas no se crearon
+            echo json_encode([
+                'success' => false,
+                'message' => $mensajeError,
+                'produccion_registrada' => true // Indicar que la producción sí se guardó
+            ]);
+            exit;
         }
     }
 

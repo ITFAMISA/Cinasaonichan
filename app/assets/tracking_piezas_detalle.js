@@ -14,7 +14,7 @@ async function cargarDetallePedido() {
             return;
         }
 
-        mostrarDetalle(data.pedido, data.piezas);
+        mostrarDetalle(data.pedido, data.items);
 
     } catch (error) {
         mostrarError('Error de conexión: ' + error.message);
@@ -22,7 +22,7 @@ async function cargarDetallePedido() {
 }
 
 // ==================== MOSTRAR DETALLE ====================
-function mostrarDetalle(pedido, piezas) {
+function mostrarDetalle(pedido, items) {
     const contenedor = document.getElementById('contenedor_detalle');
     const porcentaje = parseFloat(pedido.porcentaje_aprobacion) || 0;
 
@@ -38,7 +38,7 @@ function mostrarDetalle(pedido, piezas) {
                         <small>${escapeHtml(pedido.cliente_nombre)}</small>
                     </div>
                     <div class="text-end">
-                        <span class="badge bg-light text-dark fs-6">${porcentaje}% Aprobación</span>
+                        <span class="badge bg-light text-dark fs-6">${porcentaje}% Aprobación General</span>
                     </div>
                 </div>
             </div>
@@ -78,11 +78,11 @@ function mostrarDetalle(pedido, piezas) {
                     </div>
                 </div>
 
-                <!-- Card: Resumen de Piezas -->
+                <!-- Card: Resumen General de Piezas -->
                 <div class="card shadow-sm border-0">
                     <div class="card-header bg-success text-white border-bottom">
                         <h6 class="mb-0 fw-bold">
-                            <i class="fas fa-chart-bar me-2"></i>Resumen
+                            <i class="fas fa-chart-bar me-2"></i>Resumen General
                         </h6>
                     </div>
                     <div class="card-body">
@@ -111,42 +111,9 @@ function mostrarDetalle(pedido, piezas) {
                 </div>
             </div>
 
-            <!-- Columna derecha: Tabla de Piezas -->
+            <!-- Columna derecha: Items agrupados -->
             <div class="col-lg-9 mb-4">
-                <!-- Card: Tabla de Piezas -->
-                <div class="card shadow-sm border-0">
-                    <div class="card-header bg-info text-white border-bottom">
-                        <div class="d-flex justify-content-between align-items-center">
-                            <h6 class="mb-0 fw-bold">
-                                <i class="fas fa-list me-2"></i>Detalle de Piezas
-                            </h6>
-                            <span class="badge bg-light text-dark">${piezas.length}</span>
-                        </div>
-                    </div>
-                    <div class="card-body p-0">
-                        <div class="table-responsive">
-                            <table class="table table-hover mb-0">
-                                <thead>
-                                    <tr>
-                                        <th>Folio</th>
-                                        <th>Item</th>
-                                        <th>Descripción</th>
-                                        <th>Supervisor</th>
-                                        <th>Fecha Producción</th>
-                                        <th>Estatus</th>
-                                        <th>Inspector</th>
-                                        <th>Fecha Inspección</th>
-                                        <th>Defectos</th>
-                                        <th>Observaciones</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    ${generarFilasPiezas(piezas)}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                ${generarCardsItems(items)}
             </div>
         </div>
     `;
@@ -154,12 +121,133 @@ function mostrarDetalle(pedido, piezas) {
     contenedor.innerHTML = html;
 }
 
+// ==================== GENERAR CARDS DE ITEMS ====================
+function generarCardsItems(items) {
+    if (items.length === 0) {
+        return `
+            <div class="alert alert-info" role="alert">
+                <i class="fas fa-info-circle me-2"></i>No hay items para este pedido
+            </div>
+        `;
+    }
+
+    return items.map(item => {
+        const porcentajeProduccion = item.qty_solicitada > 0
+            ? (item.prod_total / item.qty_solicitada) * 100
+            : 0;
+
+        const colorBarra = porcentajeProduccion >= 100 ? 'bg-success' :
+                          porcentajeProduccion >= 75 ? 'bg-info' :
+                          porcentajeProduccion >= 50 ? 'bg-warning' : 'bg-danger';
+
+        return `
+            <div class="card shadow-sm border-0 mb-4">
+                <!-- Header del Item con información de producción -->
+                <div class="card-header bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <h5 class="mb-1">
+                                <i class="fas fa-cube me-2"></i>
+                                <span class="badge bg-light text-dark me-2">${escapeHtml(item.item_code)}</span>
+                            </h5>
+                            <small>${escapeHtml(item.descripcion || 'Sin descripción')}</small>
+                        </div>
+                        <div class="col-md-6 text-end">
+                            <div class="mb-1">
+                                <span class="badge bg-light text-dark me-1">
+                                    ${item.porcentaje_aprobacion}% Aprobación
+                                </span>
+                                <span class="badge bg-info">
+                                    ${item.total_piezas} piezas
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Información de Producción -->
+                <div class="card-body bg-light border-bottom">
+                    <div class="row g-3">
+                        <div class="col-md-3 text-center">
+                            <small class="text-muted d-block mb-1">Solicitado</small>
+                            <h5 class="mb-0">${parseFloat(item.qty_solicitada).toFixed(2)}</h5>
+                            <small class="text-muted">${escapeHtml(item.unidad_medida || 'un')}</small>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <small class="text-muted d-block mb-1">Producido</small>
+                            <h5 class="mb-0 text-success">${parseFloat(item.prod_total).toFixed(2)}</h5>
+                            <small class="text-muted">${escapeHtml(item.unidad_medida || 'un')}</small>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <small class="text-muted d-block mb-1">Pendiente</small>
+                            <h5 class="mb-0 ${item.qty_pendiente > 0 ? 'text-warning' : 'text-success'}">
+                                ${parseFloat(item.qty_pendiente).toFixed(2)}
+                            </h5>
+                            <small class="text-muted">${escapeHtml(item.unidad_medida || 'un')}</small>
+                        </div>
+                        <div class="col-md-3 text-center">
+                            <small class="text-muted d-block mb-1">Progreso</small>
+                            <h5 class="mb-0">${porcentajeProduccion.toFixed(1)}%</h5>
+                            <div class="progress mt-1" style="height: 8px;">
+                                <div class="progress-bar ${colorBarra}" style="width: ${Math.min(porcentajeProduccion, 100)}%"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mini resumen de calidad -->
+                    <div class="row g-2 mt-3">
+                        <div class="col-3 text-center">
+                            <small class="text-muted d-block">Por Inspeccionar</small>
+                            <strong>${item.piezas_por_inspeccionar}</strong>
+                        </div>
+                        <div class="col-3 text-center">
+                            <small class="text-success d-block">Liberadas</small>
+                            <strong class="text-success">${item.piezas_liberadas}</strong>
+                        </div>
+                        <div class="col-3 text-center">
+                            <small class="text-danger d-block">Rechazadas</small>
+                            <strong class="text-danger">${item.piezas_rechazadas}</strong>
+                        </div>
+                        <div class="col-3 text-center">
+                            <small class="text-info d-block">Reinspección</small>
+                            <strong class="text-info">${item.piezas_reinspeccion}</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabla de Piezas del Item -->
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover table-sm mb-0">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>Folio</th>
+                                    <th>Supervisor</th>
+                                    <th>Fecha Producción</th>
+                                    <th>Estatus</th>
+                                    <th>Inspector</th>
+                                    <th>Fecha Inspección</th>
+                                    <th>Defectos</th>
+                                    <th>Observaciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${generarFilasPiezas(item.piezas)}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
 function generarFilasPiezas(piezas) {
     if (piezas.length === 0) {
         return `
             <tr>
-                <td colspan="10" class="text-center text-muted py-4">
-                    No hay piezas para este pedido
+                <td colspan="8" class="text-center text-muted py-4">
+                    No hay piezas para este item
                 </td>
             </tr>
         `;
@@ -176,8 +264,6 @@ function generarFilasPiezas(piezas) {
         return `
             <tr>
                 <td><strong>${escapeHtml(pieza.folio_pieza)}</strong></td>
-                <td>${escapeHtml(pieza.item_code)}</td>
-                <td>${escapeHtml(pieza.descripcion || 'N/A')}</td>
                 <td>${escapeHtml(pieza.supervisor_produccion || 'N/A')}</td>
                 <td>${formatearFecha(pieza.fecha_produccion)}</td>
                 <td>${generarBadgeEstatus(pieza.estatus)}</td>

@@ -121,8 +121,6 @@ include __DIR__ . '/app/views/header.php';
     </div>
 </div>
 
-<?php include __DIR__ . '/app/views/modal_producto.php'; ?>
-
     </main>
     <footer class="bg-gradient-to-r from-slate-100 via-blue-50 to-slate-100 text-center py-6 mt-8 shadow-inner">
         <div class="container">

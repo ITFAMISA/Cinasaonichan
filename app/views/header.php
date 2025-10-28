@@ -47,8 +47,8 @@
             <div class="flex items-center justify-between px-4 py-3">
                 <!-- Logo/Brand -->
                 <a class="flex items-center space-x-3 text-white hover:text-blue-100 transition-all duration-300 group" href="<?php echo BASE_PATH; ?>/index.php">
-                    <img src="<?php echo BASE_PATH; ?>/app/assets/img/logo.png" alt="CINASA Logo" class="h-16 w-16 group-hover:scale-110 transition-transform duration-300">
-                    <span class="font-bold text-2xl tracking-tight">CINASA</span>
+                    <img src="<?php echo BASE_PATH; ?>/app/assets/img/logo.png" alt="CINASA Icon" class="h-12 w-12 group-hover:scale-110 transition-transform duration-300">
+                    <img src="<?php echo BASE_PATH; ?>/app/assets/img/Cinasa.png" alt="CINASA" class="h-10 group-hover:scale-105 transition-transform duration-300">
                 </a>
                 
                 <!-- Mobile menu button -->
@@ -81,6 +81,10 @@
                     <a href="<?php echo BASE_PATH; ?>/tracking_piezas.php" class="nav-link-custom <?php echo (basename($_SERVER['PHP_SELF']) == 'tracking_piezas.php') ? 'active' : ''; ?>">
                         <i class="fas fa-route"></i>
                         <span>Tracking</span>
+                    </a>
+                    <a href="<?php echo BASE_PATH; ?>/pdf_ordenes.php" class="nav-link-custom <?php echo (basename($_SERVER['PHP_SELF']) == 'pdf_ordenes.php') ? 'active' : ''; ?>">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>PDFs</span>
                     </a>
 
                     <!-- Separator -->
@@ -141,6 +145,10 @@
                     <a href="<?php echo BASE_PATH; ?>/tracking_piezas.php" class="mobile-nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'tracking_piezas.php') ? 'active' : ''; ?>">
                         <i class="fas fa-route"></i>
                         <span>Tracking</span>
+                    </a>
+                    <a href="<?php echo BASE_PATH; ?>/pdf_ordenes.php" class="mobile-nav-link <?php echo (basename($_SERVER['PHP_SELF']) == 'pdf_ordenes.php') ? 'active' : ''; ?>">
+                        <i class="fas fa-file-pdf"></i>
+                        <span>PDFs</span>
                     </a>
 
                     <div class="border-t border-white/20 my-2"></div>

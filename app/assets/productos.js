@@ -313,19 +313,246 @@ function cargarOpcionesModal() {
 }
 
 function abrirModalCrear() {
-    const titulo = document.getElementById('modalTitulo');
-    titulo.innerHTML = '<i class="fas fa-plus-circle mr-2"></i><span>Nuevo Producto</span>';
-    document.getElementById('btnGuardarTexto').textContent = 'Guardar Producto';
-    document.getElementById('formProducto').reset();
-    document.getElementById('producto_id').value = '';
+    crearYMostrarModal(null);
+}
 
-    ocultarErrores();
-
+function crearYMostrarModal(productoData) {
     // Cargar opciones dinámicamente
     cargarOpcionesModal();
 
+    // Generar HTML del modal
+    const modalHTML = generarHTMLModal(productoData);
+
+    // Remover modal existente si lo hay
+    const existingModal = document.getElementById('modalProducto');
+    if (existingModal) {
+        const bootstrapModal = bootstrap.Modal.getInstance(existingModal);
+        if (bootstrapModal) {
+            bootstrapModal.hide();
+        }
+        existingModal.remove();
+    }
+
+    // Insertar modal en el DOM
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    // Configurar evento del botón guardar
+    document.getElementById('btnGuardarProducto').addEventListener('click', guardarProducto);
+
+    // Mostrar modal
     const modal = new bootstrap.Modal(document.getElementById('modalProducto'));
     modal.show();
+}
+
+function generarHTMLModal(productoData) {
+    const isEdit = productoData !== null;
+    const titulo = isEdit ? '<i class="fas fa-edit mr-2"></i><span>Editar Producto</span>' : '<i class="fas fa-plus-circle mr-2"></i><span>Nuevo Producto</span>';
+    const btnTexto = isEdit ? 'Actualizar Producto' : 'Guardar Producto';
+    const productoId = isEdit ? productoData.id : '';
+
+    return `
+        <div class="modal fade" id="modalProducto" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitulo">${titulo}</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formProducto">
+                            <input type="hidden" id="producto_id" name="id" value="${productoId}">
+
+                            <h6 class="border-bottom pb-2 mb-3">
+                                <i class="fas fa-info-circle"></i> Información Básica del Producto
+                            </h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-4">
+                                    <label for="material_code" class="form-label">Código de Material/Pieza</label>
+                                    <input type="text" class="form-control" id="material_code" name="material_code" placeholder="100099089" value="${isEdit ? productoData.material_code || '' : ''}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="unidad_medida_modal" class="form-label">Unidad de Medida</label>
+                                    <select class="form-select" id="unidad_medida_modal" name="unidad_medida">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="EA" ${isEdit && productoData.unidad_medida === 'EA' ? 'selected' : ''}>EA - Each (Pieza)</option>
+                                        <option value="PZ" ${isEdit && productoData.unidad_medida === 'PZ' ? 'selected' : ''}>PZ - Pieza</option>
+                                        <option value="KG" ${isEdit && productoData.unidad_medida === 'KG' ? 'selected' : ''}>KG - Kilogramo</option>
+                                        <option value="LB" ${isEdit && productoData.unidad_medida === 'LB' ? 'selected' : ''}>LB - Libra</option>
+                                        <option value="MT" ${isEdit && productoData.unidad_medida === 'MT' ? 'selected' : ''}>MT - Metro</option>
+                                        <option value="M2" ${isEdit && productoData.unidad_medida === 'M2' ? 'selected' : ''}>M2 - Metro Cuadrado</option>
+                                        <option value="M3" ${isEdit && productoData.unidad_medida === 'M3' ? 'selected' : ''}>M3 - Metro Cúbico</option>
+                                        <option value="LT" ${isEdit && productoData.unidad_medida === 'LT' ? 'selected' : ''}>LT - Litro</option>
+                                        <option value="GL" ${isEdit && productoData.unidad_medida === 'GL' ? 'selected' : ''}>GL - Galón</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="pais_origen_modal" class="form-label">País de Origen</label>
+                                    <input type="text" class="form-control" id="pais_origen_modal" name="pais_origen" placeholder="ej: México, China" value="${isEdit ? productoData.pais_origen || '' : ''}">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="descripcion" class="form-label">Descripción del Producto</label>
+                                    <textarea class="form-control" id="descripcion" name="descripcion" rows="2" placeholder="COVER, ACCESS">${isEdit ? productoData.descripcion || '' : ''}</textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="precio_unitario" class="form-label">Precio Unitario (USD)</label>
+                                    <input type="number" step="0.01" class="form-control" id="precio_unitario" name="precio_unitario" placeholder="0.00" value="${isEdit ? productoData.precio_unitario || '' : ''}">
+                                </div>
+                            </div>
+
+                            <h6 class="border-bottom pb-2 mb-3">
+                                <i class="fas fa-file-invoice"></i> Clasificación Arancelaria
+                            </h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label for="hts_code" class="form-label">Código HTS</label>
+                                    <input type="text" class="form-control" id="hts_code" name="hts_code" placeholder="8431499030" value="${isEdit ? productoData.hts_code || '' : ''}">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="tipo_parte" class="form-label">Tipo de Parte</label>
+                                    <input type="text" class="form-control" id="tipo_parte" name="tipo_parte" placeholder="Standard Part, Custom" value="${isEdit ? productoData.tipo_parte || '' : ''}">
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="hts_descripcion" class="form-label">Descripción Código HTS</label>
+                                    <textarea class="form-control" id="hts_descripcion" name="hts_descripcion" rows="2" placeholder="COAL, ROCK CUTTERS, TUNNEL MACHINE PARTS">${isEdit ? productoData.hts_descripcion || '' : ''}</textarea>
+                                </div>
+                            </div>
+
+                            <h6 class="border-bottom pb-2 mb-3">
+                                <i class="fas fa-certificate"></i> Sistema de Calidad y Categoría
+                            </h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label for="sistema_calidad_modal" class="form-label">Sistema de Calidad</label>
+                                    <select class="form-select" id="sistema_calidad_modal" name="sistema_calidad">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="J02" ${isEdit && productoData.sistema_calidad === 'J02' ? 'selected' : ''}>J02</option>
+                                        <option value="ISO9001" ${isEdit && productoData.sistema_calidad === 'ISO9001' ? 'selected' : ''}>ISO9001</option>
+                                        <option value="ISO14001" ${isEdit && productoData.sistema_calidad === 'ISO14001' ? 'selected' : ''}>ISO14001</option>
+                                        <option value="IATF16949" ${isEdit && productoData.sistema_calidad === 'IATF16949' ? 'selected' : ''}>IATF16949</option>
+                                        <option value="AS9100" ${isEdit && productoData.sistema_calidad === 'AS9100' ? 'selected' : ''}>AS9100</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="categoria_modal" class="form-label">Categoría</label>
+                                    <input type="text" class="form-control" id="categoria_modal" name="categoria" placeholder="ej: Electrónica, Accesorios" value="${isEdit ? productoData.categoria || '' : ''}">
+                                </div>
+                            </div>
+
+                            <h6 class="border-bottom pb-2 mb-3">
+                                <i class="fas fa-drafting-compass"></i> Información Técnica del Dibujo
+                            </h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-3">
+                                    <label for="drawing_number" class="form-label">Número de Dibujo</label>
+                                    <input type="text" class="form-control" id="drawing_number" name="drawing_number" placeholder="100099089" value="${isEdit ? productoData.drawing_number || '' : ''}">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="drawing_version" class="form-label">Versión</label>
+                                    <input type="text" class="form-control" id="drawing_version" name="drawing_version" placeholder="06" value="${isEdit ? productoData.drawing_version || '' : ''}">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="drawing_sheet" class="form-label">Hoja</label>
+                                    <input type="text" class="form-control" id="drawing_sheet" name="drawing_sheet" placeholder="001" value="${isEdit ? productoData.drawing_sheet || '' : ''}">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="ecm_number" class="form-label">Número ECM</label>
+                                    <input type="text" class="form-control" id="ecm_number" name="ecm_number" placeholder="1194615" value="${isEdit ? productoData.ecm_number || '' : ''}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="material_revision" class="form-label">Revisión Material</label>
+                                    <input type="text" class="form-control" id="material_revision" name="material_revision" placeholder="06" value="${isEdit ? productoData.material_revision || '' : ''}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="change_number" class="form-label">Número de Cambio</label>
+                                    <input type="text" class="form-control" id="change_number" name="change_number" placeholder="1194615" value="${isEdit ? productoData.change_number || '' : ''}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="ref_documento" class="form-label">Documento de Referencia</label>
+                                    <input type="text" class="form-control" id="ref_documento" name="ref_documento" placeholder="Doc/Sheet/Ver" value="${isEdit ? productoData.ref_documento || '' : ''}">
+                                </div>
+                            </div>
+
+                            <h6 class="border-bottom pb-2 mb-3">
+                                <i class="fas fa-layer-group"></i> Información de Componentes/BOM
+                            </h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-4">
+                                    <label for="nivel_componente" class="form-label">Nivel Componente</label>
+                                    <input type="text" class="form-control" id="nivel_componente" name="nivel_componente" placeholder="1" value="${isEdit ? productoData.nivel_componente || '' : ''}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="componente_linea" class="form-label">Componente Línea</label>
+                                    <input type="text" class="form-control" id="componente_linea" name="componente_linea" placeholder="001, 002" value="${isEdit ? productoData.componente_linea || '' : ''}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="ref_documento_bom" class="form-label">Documento Referencia</label>
+                                    <input type="text" class="form-control" id="ref_documento_bom" name="ref_documento_bom" placeholder="Doc/Sheet/Ver" value="${isEdit ? productoData.ref_documento_bom || '' : ''}">
+                                </div>
+                            </div>
+
+                            <h6 class="border-bottom pb-2 mb-3">
+                                <i class="fas fa-weight"></i> Especificaciones Físicas
+                            </h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-3">
+                                    <label for="peso" class="form-label">Peso</label>
+                                    <input type="number" step="0.001" class="form-control" id="peso" name="peso" value="${isEdit ? productoData.peso || '' : ''}">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="unidad_peso" class="form-label">Unidad Peso</label>
+                                    <input type="text" class="form-control" id="unidad_peso" name="unidad_peso" placeholder="KG, LB" value="${isEdit ? productoData.unidad_peso || '' : ''}">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="material" class="form-label">Material</label>
+                                    <input type="text" class="form-control" id="material" name="material" placeholder="Acero, Aluminio" value="${isEdit ? productoData.material || '' : ''}">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="acabado" class="form-label">Acabado</label>
+                                    <input type="text" class="form-control" id="acabado" name="acabado" placeholder="Pintado, Anodizado" value="${isEdit ? productoData.acabado || '' : ''}">
+                                </div>
+                            </div>
+
+                            <h6 class="border-bottom pb-2 mb-3">
+                                <i class="fas fa-sticky-note"></i> Notas y Estatus
+                            </h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-4">
+                                    <label for="estatus_modal" class="form-label">Estatus</label>
+                                    <select class="form-select" id="estatus_modal" name="estatus">
+                                        <option value="activo" ${isEdit && productoData.estatus === 'activo' ? 'selected' : ''}>Activo</option>
+                                        <option value="inactivo" ${isEdit && productoData.estatus === 'inactivo' ? 'selected' : ''}>Inactivo</option>
+                                        <option value="descontinuado" ${isEdit && productoData.estatus === 'descontinuado' ? 'selected' : ''}>Descontinuado</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-8"></div>
+                                <div class="col-md-12">
+                                    <label for="notas" class="form-label">Notas Generales</label>
+                                    <textarea class="form-control" id="notas" name="notas" rows="2" placeholder="Notas adicionales del producto...">${isEdit ? productoData.notas || '' : ''}</textarea>
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="especificaciones" class="form-label">Especificaciones Técnicas</label>
+                                    <textarea class="form-control" id="especificaciones" name="especificaciones" rows="2" placeholder="All product and processes supplied must conform to requirements...">${isEdit ? productoData.especificaciones || '' : ''}</textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            <i class="fas fa-times"></i> Cancelar
+                        </button>
+                        <button type="button" class="btn btn-primary" id="btnGuardarProducto">
+                            <i class="fas fa-save"></i> <span id="btnGuardarTexto">${btnTexto}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function guardarProductoFormulario(e) {
+    e.preventDefault();
+    guardarProducto();
 }
 
 function cerrarModal() {
@@ -337,60 +564,19 @@ function cerrarModal() {
 }
 
 function editarProducto(id) {
-    // Cargar las opciones dinámicamente
-    Promise.resolve(cargarOpcionesModal()).then(() => {
-        fetch(`${BASE_URL}/app/controllers/productos_detalle.php?id=${id}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    const producto = data.data;
-
-                    document.getElementById('modalTitulo').innerHTML = '<i class="fas fa-edit mr-2"></i><span>Editar Producto</span>';
-                    document.getElementById('btnGuardarTexto').textContent = 'Actualizar Producto';
-
-                    // Llenar el formulario
-                    document.getElementById('producto_id').value = producto.id;
-                    document.getElementById('material_code').value = producto.material_code || '';
-                    document.getElementById('descripcion').value = producto.descripcion || '';
-
-                    // Selects - ahora las opciones ya están cargadas dinámicamente
-                    setSelectValue('unidad_medida', producto.unidad_medida);
-                    setSelectValue('pais_origen', producto.pais_origen);
-                    setSelectValue('sistema_calidad', producto.sistema_calidad);
-                    setSelectValue('categoria', producto.categoria);
-
-                    document.getElementById('precio_unitario').value = producto.precio_unitario || '';
-                    document.getElementById('hts_code').value = producto.hts_code || '';
-                    document.getElementById('hts_descripcion').value = producto.hts_descripcion || '';
-                    document.getElementById('tipo_parte').value = producto.tipo_parte || '';
-                    document.getElementById('drawing_number').value = producto.drawing_number || '';
-                    document.getElementById('drawing_version').value = producto.drawing_version || '';
-                    document.getElementById('drawing_sheet').value = producto.drawing_sheet || '';
-                    document.getElementById('ecm_number').value = producto.ecm_number || '';
-                    document.getElementById('material_revision').value = producto.material_revision || '';
-                    document.getElementById('change_number').value = producto.change_number || '';
-                    document.getElementById('nivel_componente').value = producto.nivel_componente || '';
-                    document.getElementById('componente_linea').value = producto.componente_linea || '';
-                    document.getElementById('ref_documento').value = producto.ref_documento || '';
-                    document.getElementById('peso').value = producto.peso || '';
-                    document.getElementById('unidad_peso').value = producto.unidad_peso || '';
-                    document.getElementById('material').value = producto.material || '';
-                    document.getElementById('acabado').value = producto.acabado || '';
-                    document.getElementById('notas').value = producto.notas || '';
-                    document.getElementById('especificaciones').value = producto.especificaciones || '';
-                    document.getElementById('estatus_modal').value = producto.estatus || 'activo';
-
-                    const modal = new bootstrap.Modal(document.getElementById('modalProducto'));
-                    modal.show();
-                } else {
-                    mostrarError('Error al cargar producto: ' + data.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                mostrarError('Error de conexión al cargar producto');
-            });
-    });
+    fetch(`${BASE_URL}/app/controllers/productos_detalle.php?id=${id}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                crearYMostrarModal(data.data);
+            } else {
+                mostrarError('Error al cargar producto: ' + data.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            mostrarError('Error de conexión al cargar producto');
+        });
 }
 
 // Función auxiliar para establecer valores en campos del formulario

@@ -1,0 +1,717 @@
+CINASA Logo
+CINASA
+Clientes
+Productos
+Pedidos
+Producción
+Calidad
+Tracking
+PDFs
+
+Admin
+Subir Orden de Compra (PDF)
+Seleccionar archivo PDFSin archivos seleccionados
+Tamaño máximo: 10MB. Solo archivos PDF.
+ Información
+Este módulo extrae información de órdenes de compra en formato PDF. Sube tu PDF para extraer:
+
+Número de orden
+Fecha
+Códigos de productos
+Cantidades y precios
+Texto Extraído
+Texto Original
+Orden de compra actualizada
+Sell to:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150
+    INT B ZONA INDUSTRIAL
+FRONTERA, COAH 	25680 MEX
+Order:	GGYD0585-3
+Date:	18/09/2025
+Página	1  de  8
+Phone:
+Fax:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150  INT 
+B ZONA INDUSTRIAL 
+FRONTERA, COAH, 	25680
+MEX
+Bill To:
+Buyer Contact	Special Instructions
+maria.herrera@gbrx.com
+Payment Terms	Delivery Terms	Delivery term places	Delivery Mode
+N60	CFR	Delivered
+Line	Item No.	Description
+Fecha de 
+entrega
+Quantity
+Unit	Unit Price	Ext. Price
+ 	1
+Partial 
+Receipt
+100025517-S	100025517
+OUTLET SADDLE PL 	1 	3/4 X 	12 	1/4
+ X 	12 	1/4 ASTM A	516 GR	70 
+NORMALIZED
+09/10/2025	96.00	EA	2,203.18	211,505.28
+ 	2
+Partial 
+Receipt
+100027094-S	100027094
+TOP UNLOADING FLANGE PL 	1 
+3/4 X 	29 X 	30 	5/8 ASTM A	516 GR	70
+ NORMALIZED
+30/09/2025	96.00	EA	3,930.00	377,280.00
+ 	3
+Open order
+100001121-S	100001121
+FILL PIPE GUIDE, PIPE 	4 SCH 	40	S 
+X 	6 ASTM A	312 GRADE TP	316	L 
+STAINLESS STEEL SEAMLESS
+09/10/2025	96.00	EA	95.03	9,122.88
+COMPAÑIA INDUSTRIAL NUEVO 
+ALMADEN SA
+Supplier:
+Account number:	V00424
+Address:	V. Carranza No. 	110	-C 
+Ote 
+MONCLOVA, COAH, 
+25700
+MEX
+Phone:
+Fax:
+866-633-
+2256
+Ship to:
+Address:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO. 	150 
+INT B ZONA INDUSTRIAL 
+FRONTERA, COAH, 	25680
+MEX
+Signature
+Our Purchase order number must appear on your invoice and packing slips
+
+Orden de compra actualizada
+Sell to:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150
+    INT B ZONA INDUSTRIAL
+FRONTERA, COAH 	25680 MEX
+Order:	GGYD0585-3
+Date:	18/09/2025
+Página	2  de  8
+Phone:
+Fax:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150  INT 
+B ZONA INDUSTRIAL 
+FRONTERA, COAH, 	25680
+MEX
+Bill To:
+ 	4
+Open order
+100035922-S	100035922
+RELIEF VALVE NOZZLE FLANGE, 
+PL 	1 X 	8 X 	8 ASTM A	516 GR	70 
+NORMALIZED
+09/10/2025	96.00	EA	774.09	74,312.64
+ 	5
+Open order
+100006591-S 	100006591
+BLIND FLANGE, PL 	1/2 X 	3 	7/8 X 	3 
+7/8 ASTM A	240 T	316	L STAINLESS 
+STEEL
+09/10/2025	192.00	EA	334.80	64,281.60
+ 	6
+Open order
+100042302-S	100042302
+BOV STEM ADAPTER, RB 	3 X 	3 
+1/4 ASTM A	36
+09/10/2025	96.00	EA	3,045.00	292,320.00
+ 	7
+Open order
+100018926-S	100018926
+RELEASE ROD, RB 	1/2 X 	136 	1/2 
+ASTM A	36
+09/10/2025	96.00	EA	168.53	16,178.88
+ 	8
+Open order
+100022948-S 	100022948
+BLIND FLANGE, PL 	1 X 	4 	1/2 X 	4 
+1/2 ASTM A	240 T	316	L STAINLESS 
+STEEL
+09/10/2025	96.00	EA	505.58	48,535.68
+Signature
+Our Purchase order number must appear on your invoice and packing slips
+
+Orden de compra actualizada
+Sell to:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150
+    INT B ZONA INDUSTRIAL
+FRONTERA, COAH 	25680 MEX
+Order:	GGYD0585-3
+Date:	18/09/2025
+Página	3  de  8
+Phone:
+Fax:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150  INT 
+B ZONA INDUSTRIAL 
+FRONTERA, COAH, 	25680
+MEX
+Bill To:
+ 	9
+Open order
+100042303-S	100042303
+BOV HANDLE LOCKING TUBE, RB 
+3 X 	4 	1/4 ASTM A	36
+09/10/2025	96.00	EA	1,239.00	118,944.00
+ 	10
+Open order
+271241-17-S	271241-17
+CTLO, RB 	1/2 X 	2 ASTM A	36
+09/10/2025	192.00	EA	20.00	3,840.00
+ 	11
+Open order
+271375-02-S	271375-02
+SUPPORT, RELEASE ROD, FB 	1/4 
+X 	2 X 	8 ASTM A	36 W/.	2% Cu
+09/10/2025	96.00	EA	50.56	4,853.76
+Currency:	MXN
+Total Gross:	1,221,174.72
+Total Tax:	0.00
+Total Net Amount	1,221,174.72
+Notes	Todos los números de parte colocados en esta orden de compra
+serán liberados de acuerdo a nuestro procedimiento P-CO-	2.9-04	-
+GM
+Nuestro número de orden de compra debe aparecer en su factura 
+y en las etiquetas de embalaje.
+Signature
+Our Purchase order number must appear on your invoice and packing slips
+
+Orden de compra actualizada
+Sell to:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150
+    INT B ZONA INDUSTRIAL
+FRONTERA, COAH 	25680 MEX
+Order:	GGYD0585-3
+Date:	18/09/2025
+Página	4  de  8
+Phone:
+Fax:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150  INT 
+B ZONA INDUSTRIAL 
+FRONTERA, COAH, 	25680
+MEX
+Bill To:
+TERMINOS Y CONDICIONES DE COMPRA DE GUNDERSON-GIMSA
+ 	1	. Aplicabilidad. Los presentes Términos y Condiciones de Compra de Gunderson-GIMSA (en adelante, los 	“	Términos	”), 	en conjunto con la 
+Orden de Compra u otro documento afín remitido con este instrumento (la 	“	OC	” 	y, en conjunto con los Términos, la 	“	Orden	”), 	constituyen una 
+oferta de parte de Gunderson-GIMSA, S.A. de C.V. ("GIMSA") para comprar los bienes y/o servicios especificados en la portada de la OC 
+(los 	“	Bienes	”) 	de la persona a quien va dirigida la OC (el 	“	Vendedor	”). 	Salvo lo dispuesto al contrario en algún acuerdo de compra suscrito 
+por GIMSA y el Vendedor referente a la compra de los Bienes, esta Orden, en conjunto con cualesquier documentos incorporados a la 
+misma por referencia, constituye el acuerdo total y único entre GIMSA y el Vendedor respecto a la materia objeto de esta Orden, por lo que 
+suplanta a todo entendimiento, acuerdo, negociación, representación, garantía y comunicación anterior o contemporánea, tanto por escrito 
+como verbal, respecto a la materia objeto de esta Orden, con la excepción de cualquier convenio de confidencialidad. La presente Orden 
+expresamente limita la aceptación del Vendedor a los términos y condiciones de esta Orden. Los términos y condiciones aquí estipuladas 
+predominarán sobre cualesquier términos o condiciones dispuestas en cualquier otro documento y expresamente excluye cualesquier 
+términos y condiciones de venta generales del Vendedor estipulados en su factura o en cualquier otro documento emitido por el Vendedor 
+en relación con esta Orden. Los términos y condiciones de esta Orden se aplicarán a cualesquier Bienes reparados o sustituidos que el 
+Vendedor entregue a GIMSA en relación con esta Orden.
+2	. Aceptación. La presente Orden no será vinculante para GIMSA hasta que el Vendedor la haya aceptado por escrito. GIMSA podrá retirar 
+esta Orden mediante previa notificación por escrito entregada al Vendedor en cualquier momento antes de recibir dicha aceptación de parte 
+del Vendedor. Por la aceptación de este orden, si su producto requiere alguna certificación, aprobaciones o denominaciones de calidad, 
+incluyendo sin limitación, la certificación AAR, usted reconoce que este tipo de certificaciones, aprobaciones o designaciones se han 
+obtenido a tiempo y sean exactos y actualizados.
+3	. Fecha de Entrega. El Vendedor entregará los Bienes en las cantidades y en la fecha o fechas especificadas en esta Orden o bien según 
+las Partes hayan convenido por escrito al contrario (la "Fecha de Entrega"). La entrega oportuna de los Bienes es esencial. El Vendedor 
+deberá disponer de suficiente mano de obra, gerencia, planta y equipos y deberá trabajar las horas necesarias (incluyendo mas sin limitarse 
+a turnos nocturnos, horas extras, fines de semana y feriados) para garantizar la entrega oportuna. En caso que el Vendedor no entregue los 
+Bienes en su totalidad en la Fecha de Entrega, GIMSA podrá terminar esta Orden inmediatamente mediante notificación por escrito 
+entregada al Vendedor, y el Vendedor deberá indemnizar a GIMSA por concepto de cualquier pérdida, reclamo, daños, costos y gastos 
+razonables que sean atribuibles a la falta del Vendedor de entregar los Bienes en la Fecha de Entrega.
+4	. Modificaciones. Por medio de la presente, el Vendedor se obliga a aceptar cualquier modificación solicitada por GIMSA por escrito 
+respecto a cualquiera de los siguientes puntos: (a) las especificaciones, planos y datos sobre los Bienes cuando se trata de Bienes 
+fabricados especialmente por el Vendedor; (b) la cantidad; (c) los métodos de transporte o embalaje; (d) la Fecha de Entrega; (e) el Lugar de 
+Entrega (definido abajo); y (f) cualquier otro asunto relacionado con esta Orden. Cuando alguna modificación solicitada por GIMSA ocasione 
+un incremento o reducción en el costo de los Bienes o vuelva infactible la Fecha de Entrega original, previa notificación del Vendedor GIMSA 
+hará un ajuste equitativo al precio del contrato y/o a la Fecha de Entrega, según sea el caso.
+5	. Cantidad. Si el Vendedor entrega una cantidad de los Bienes mayor que la cantidad pedida, GIMSA podrá rechazar todos o algunos de los 
+Bienes excedentes y devolver los Bienes rechazados al Vendedor a cuenta y riesgo de éste. Si el Vendedor entrega una cantidad mayor o 
+menor de los Bienes pedidos y GIMSA no rechaza los Bienes sino que acepta dicha cantidad mayor o menor, el Precio de los Bienes será 
+ajustado sobre una base prorrateada.
+6	. Lugar de Entrega. El Vendedor entregará los Bienes a la dirección especificada en la OC (el "Lugar de Entrega") durante las horas hábiles 
+normalmente observadas por el receptor, salvo indicaciones al contrario emitidas por GIMSA. 
+7	. Envío. El Vendedor notificará el envío por escrito a GIMSA una vez entregados los Bienes a la empresa transportista. El Vendedor 
+proporcionará a GIMSA toda la documentación relacionada con el envío, incluyendo sin limitarse a la factura comercial, la lista de empaque, 
+la guía aérea, terrestre o marítima, y cualquier otro documento necesario para liberar los Bienes a favor de GIMSA inmediatamente después 
+de que el Vendedor entregue los Bienes al transportista. El número de la OC debe aparecer en todo documento de envío, etiqueta, guía, 
+factura, correspondencia y demás documentación relacionada con esta Orden. El peso o conteo determinado por GIMSA será aceptado 
+como final y definitivo para efectos de todo envío que no sea acompañado por una lista de empaque.
+8	. Propiedad y Riesgo de Pérdida. La propiedad de los Bienes pasará a favor de GIMSA al ser puestos los Bienes en el Lugar de Entrega. 
+Cuando GIMSA haga abonos contra el saldo del precio, la propiedad de los Bienes será transferida a GIMSA proporcionalmente según el 
+total acumulado de los abonos respecto al precio de esta Orden. En dado caso, el Vendedor identificará los Bienes como propiedad de 
+GIMSA de acuerdo con la proporción respectiva, salvo que GIMSA instruya al Vendedor al contrario. El Vendedor asumirá todo riesgo de 
+pérdida o daños a perjuicio de los Bienes hasta el momento en que los Bienes hayan sido puestos en el Lugar de Entrega.
+9	. Embalaje. Todos los Bienes serán empacados para el transporte, colocados en paletas, cargados y amarrados de acuerdo con las 
+indicaciones de GIMSA o, en su ausencia, de manera que garantice que los Bienes serán entregados sin sufrir daño alguno. Cuando GIMSA 
+Signature
+Our Purchase order number must appear on your invoice and packing slips
+
+Orden de compra actualizada
+Sell to:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150
+    INT B ZONA INDUSTRIAL
+FRONTERA, COAH 	25680 MEX
+Order:	GGYD0585-3
+Date:	18/09/2025
+Página	5  de  8
+Phone:
+Fax:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150  INT 
+B ZONA INDUSTRIAL 
+FRONTERA, COAH, 	25680
+MEX
+Bill To:
+deba devolver material de embalaje, el Vendedor deberá dar previo aviso a GIMSA al efecto. Toda devolución de material de embalaje se 
+hará a cuenta del Vendedor.
+10	. Enmiendas y Modificaciones. Ninguna modificación de esta Orden será vinculante para GIMSA a menos que sea expresada por escrito, 
+indique específicamente que su propósito sea para modificar esta Orden, y sea firmada por un representante autorizado de GIMSA.
+11	. Inspección y Rechazo de Bienes Inconformes. GIMSA tendrá el derecho a inspeccionar los Bienes en la Fecha de Entrega o 
+posteriormente. GIMSA podrá, a su exclusivo criterio, inspeccionar todos los Bienes o una muestra de los mismos, y podrá rechazar todos o 
+cualquier parte de los Bienes si determina que los mismos sean inconformes o defectuosos. En caso que GIMSA rechace una parte de los 
+Bienes, previa notificación por escrito entregada al Vendedor GIMSA tendrá el derecho a: (a) rescindir esta Orden en su totalidad; (b) aceptar 
+los Bienes a un precio razonablemente rebajado; o (c) rechazar los Bienes y exigir que el Vendedor sustituya los Bienes rechazados, sin que 
+GIMSA incurra ningún costo adicional por dicha sustitución. En caso que GIMSA exija la sustitución de los Bienes, el Vendedor sustituirá 
+oportunamente los Bienes inconformes a cuenta propia y sufragará todo gasto incurrido, incluyendo sin limitarse al pago de los gastos de 
+transporte para devolver los Bienes inconformes y para entregar los Bienes sustituidos. Si el Vendedor no entregue los Bienes sustituidos en 
+forma oportuna, GIMSA podrá adquirir bienes equivalente de otro proveedor y cobrar al Vendedor el costo de dichos bienes adquiridos, y/o 
+terminar esta Orden por causa justificada de acuerdo con las disposiciones de la Sección 	23	. Ninguna inspección ni otra acción realizada por 
+GIMSA de conformidad con esta Sección 	11 tendrá el efecto de limitar ni de otra forma afectar las garantías del Vendedor ni las demás 
+obligaciones del Vendedor establecidas en esta Orden. Asimismo, GIMSA tendrá el derecho a realizar inspecciones adicionales después de 
+que el Vendedor haya cumplido con las acciones remediadoras a su cargo.
+12	. Precio. El precio de los Bienes (el 	“	Precio	”) 	será el precio indicado en la OC. En caso que la OC no indique ningún precio, el precio será 
+el menor de: (a) el último precio cobrado a GIMSA por concepto de bienes idénticos en cantidades idénticas o mayores; o (b) el precio 
+indicado en el listado de precios del Vendedor vigente para la fecha de esta Orden; o (c) el precio menor que el Vendedor haya cobrado a 
+cualquiera de sus demás clientes por concepto de bienes similares durante los doce meses anteriores a la fecha de esta Orden. Salvo lo 
+dispuesto al contrario por la OC, el Precio incluirá todo embalaje, costos de transporte hasta el Lugar de Entrega, seguros, aranceles y 
+demás derechos de aduana y los impuestos aplicables, incluyendo sin limitarse a todo impuesto de venta, uso, valor agregado y consumo. 
+Ningún incremento del Precio será efectivo, ya sea debido a mayores costos por materiales, mano de obra o transporte, sin el previo 
+consentimiento por escrito de GIMSA.
+13	. Términos de Pago(a) El Vendedor emitirá una factura a cargo de GIMSA una vez concluida la entrega de los Bienes y únicamente de 
+conformidad con la presente Orden. GIMSA podrá rechazar facturas prematuras, en cuyo caso el Vendedor podrá volver a presentarlas. Las 
+facturas emitidas por Vendedores que sean contribuyentes mexicanos inscritos deberán cumplir con todos los requisitos fiscales aplicables, 
+por lo que GIMSA tendrá el derecho a rechazar facturas inconformes hasta que dichas facturas sean sustituidas por otras que cumplan con 
+los requisitos fiscales correspondientes. GIMSA pagará todo monto debidamente facturado a más tardar para el día 	30 del mes posterior al 
+mes en que GIMSA haya recibido la factura respectiva, salvo aquel monto que GIMSA dispute de buena fe. GIMSA pagará todo monto que 
+no sea objeto de disputa. Las Partes procurarán resolver todo disputa de manera expedita y de buena fe. El Vendedor deberá seguir 
+cumpliendo con sus obligaciones bajo esta Orden y bajo cualquier otro contrato con GIMSA aun estando pendiente resolución una disputa 
+relacionada con esta Orden. Salvo lo especificado al contrario por la OC, todo monto pagadero bajo esta Orden deberá ser pagado en 
+dólares estadounidenses.(b) En caso que la factura de un Vendedor ofrezca un descuento por pago expedito y el Comprador elija 
+aprovechar dicha oferta, el Comprador tendrá derecho a aprovechar el descuento al pagar, para el día 	25 del mes, la factura correspondiente 
+fechada entre el día 	1	ro y el 	15 del mismo mes, o bien al pagar para el día 	10 del mes siguiente aquella factura fechada entre el día 	16 y el 
+31 del mes anterior al mes de pago. En el caso de pedidos para herramienta, el Comprador tendrá derecho a cualquier descuento ofrecido 
+por el Vendedor por pago expedito cuando pague la factura por concepto de la herramienta dentro de los 	15 días posteriores a la fecha en 
+que el Comprador haya recibido y aceptada la herramienta facturada.
+14	. Compensación de Deudas. Sin perjuicio a los demás derechos o remedios que pudiera tener y no obstante las disposiciones de la 
+Sección 	13	(a), GIMSA tendrá el derecho en todo momento a compensar, contra cualquier monto a su cargo pagadero al Vendedor, cualquier 
+monto adeudado a GIMSA por el Vendedor o cualquiera de sus filiales.
+15	. Impuestos. Salvo lo dispuesto al contrario en la OC, el Vendedor deberá pagar todo impuesto aplicable a los Bienes antes de que sean 
+entregados al Lugar de Entrega, incluyendo mas sin limitarse a los impuestos de valor agregado y demás cargos impuestos a los Bienes 
+cuya propiedad ha pasado a favor de GIMSA antes de la entrega. Con respecto al Impuesto al Valor Agregado que pudiera ser aplicable a 
+los Bienes de conformidad con la legislación fiscal mexicana, se entenderá que dicho impuesto esté incluido en el Precio, a menos que el 
+Vendedor desglose el monto correspondiente a dicho Impuesto al Valor Agregado en la factura correspondiente. El Impuesto al Valor 
+Agregado pagado por GIMSA al Vendedor de acuerdo con la legislación fiscal mexicana aplicable deberá ser debidamente contabilizado por 
+el Vendedor en sus declaraciones fiscales y pagado oportunamente a las autoridades fiscales mexicanas.
+16	. Propiedad de GIMSA(a) Todo troquel, molde, patrón, plantilla, dispositivo, descubrimiento, invención y/o otra obra o bien especializado 
+que GIMSA proporcione al Vendedor o que pague al Vendedor especialmente para producir para GIMSA bajo esta Orden será y 
+Signature
+Our Purchase order number must appear on your invoice and packing slips
+
+Orden de compra actualizada
+Sell to:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150
+    INT B ZONA INDUSTRIAL
+FRONTERA, COAH 	25680 MEX
+Order:	GGYD0585-3
+Date:	18/09/2025
+Página	6  de  8
+Phone:
+Fax:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150  INT 
+B ZONA INDUSTRIAL 
+FRONTERA, COAH, 	25680
+MEX
+Bill To:
+permanecerá propiedad de GIMSA. Con respecto a tales obras o bienes ubicados dentro del territorio mexicano, el Vendedor mantendrá los 
+mismos en su poder en calidad de depositario, por lo cual el Vendedor emitirá y entregará a GIMSA una constancia de recibo debidamente 
+notarizada por un notario público mexicano y debidamente inscrita por el Vendedor en el Registro Público de Comercio aplicable al domicilio 
+del Vendedor.(b) Hasta el punto en que tales obras producidas por GIMSA sean protegidas por derechos de autor, dichas obras se 
+considerarán 	‘	obras contratadas	’ 	y todo derecho de propiedad intelectual relacionado con tales obras corresponderá inmediatamente a 
+GIMSA. Hasta el punto en que tales obras de autoría no califiquen como 	‘	obras contratadas,	’ 	por medio del presente instrumento el Vendedor 
+vende y cede exclusivamente a GIMSA todo derecho, título e interés actual y futuro respecto a dichas obras de manera que, sin mayor 
+acción por parte del Vendedor, GIMSA será inmediata y automáticamente el propietario único y exclusivo de dicha propiedad intelectual.(c) 
+Con respecto a las obras o bienes entregados a GIMSA bajo esta Orden que no sean propiedad de GIMSA de acuerdo con los Puntos 	16	(a) 
+o (b), no obstante cualquier etiqueta restrictiva al contrario, el Vendedor otorgará a GIMSA y GIMSA tendrá licencia irrevocable, ilimitada, 
+perpetua y global para copiar, modificar, utilizar y distribuir a cualquier tercero dichas obras o bienes, incluyendo sin limitarse a planos, 
+dibujos y especificaciones para los Bienes que se clasifiquen en esta categoría, y GIMSA podrá utilizar dichos planos, dibujos y 
+especificaciones para cualquier propósito.(d) El Vendedor: (i) utilizará la propiedad de GIMSA exclusivamente para el beneficio de GIMSA (y 
+no utilizará dicha propiedad para fines propios ni para el beneficio de ningún otro cliente del Vendedor); (ii) tendrá dicha propiedad en su 
+poder a riesgo propio y asegurado por el mismo Vendedor a cuenta propia mientras esté bajo su custodio o control, por un monto 
+equivalente al costo de reposición, con toda pérdida pagadera a GIMSA (y el Vendedor entregará copias de las pólizas o constancias de 
+dichos seguros a GIMSA previa solicitud); (iii) devolverá dicha propiedad previa solicitud por escrito de GIMSA o bien cuando el Vendedor ya 
+no la necesite para efectos de suministrar los Bienes o servicios a GIMSA; y (iv) destruirá dicha propiedad previa solicitud por escrito de 
+GIMSA.
+17	. Resolución de Contradicciones o Incongruencias. Será responsabilidad del Vendedor cumplir con esta Orden y toda especificación y 
+demás documentación a la cual esta Orden haga referencia, además de aclarar con GIMSA cualquier incongruencia o contradicción que el 
+Vendedor encuentre en dichos documentos. En caso que el Vendedor no consulte con GIMSA con el fin de resolver alguna contradicción o 
+incongruencia percibida, el Vendedor tendrá responsabilidad exclusiva por los errores que pudiesen resultar debido a dicha contradicción o 
+incongruencia. Donde se haga referencia a algún documento, la versión vigente para la fecha de esta Orden aplicará.
+18	. Garantías. El Vendedor garantizará ante GIMSA que todos los Bienes, durante un período de cinco años: (a) serán libres de defectos de 
+fabricación, materiales y diseño; (b) se conformarán con (i) las especificaciones, planos y muestras aplicables y los demás requerimientos 
+especificados por GIMSA; (ii) toda descripción, promesa y muestra ofrecida por el Vendedor; y (iii) hasta el punto que no infrinja las 
+Subsecciones (b)(i) y (ii), los estándares de la industria y las leyes aplicables; (c) serán idóneos para su propósito proyectado y funcionarán 
+según lo esperado; (d) serán comercializables; (e) serán libres de todo gravamen, interés prendario u otra afectación; y (f) no violarán ni 
+infringirán ninguna patente, derecho de autor, secreto industrial ni otro derecho de propiedad intelectual de ningún tercero. Ninguna garantía 
+implícita será renunciada ni excluida. Toda garantía sobrevivirá a cualquier entrega, inspección, aceptación o pago por los Bienes por parte 
+de GIMSA, y tendrá carácter cumulativo y adicional a cualquier otra garantía dispuesta por ley o por equidad. Las garantías antes descritas 
+entrarán en vigencia a partir de la fecha en que GIMSA acepte los Bienes o la fecha en que GIMSA detecte el incumplimiento de los Bienes 
+respecto a las garantías, cual sea posterior. Si GIMSA notifica al Vendedor respecto a algún incumplimiento con esta Sección 	18	, el 
+Vendedor deberá, a cuenta propia, sustituir o reparar de manera oportuna los Bienes defectuosos o inconformes y sufragar todo gasto 
+conexo, incluyendo sin limitarse al pago de los gastos de transporte para devolver los Bienes defectuosos o inconformes al Vendedor y para 
+entregar los Bienes reparados o sustituidos a GIMSA. Las garantías estipuladas en esta Sección 	18 beneficiarán tanto a GIMSA como a sus 
+clientes, quienes tendrán el mismo derecho que tendrá GIMSA a exigir ante el Vendedor el cumplimiento de dichas garantías. Cuando se 
+trate de los Bienes incorporados en equipos que GIMSA entregue a algún cliente suyo, la garantía aplicable a dichos Bienes permanecerá 
+vigente durante los cinco años posteriores a la fecha en que GIMSA haya entregado los equipos a su cliente.
+19	. Indemnización General. El Vendedor deberá defender, indemnizar y dejar a salvo a GIMSA y a su empresa matriz y sus subsidiarias, 
+filiales, sucesores y cesionarios y sus respectivos directores, ejecutivos, accionistas y empleados, además de los clientes de GIMSA (en 
+forma colectiva, los 	“	Indemnizables	”) 	contra toda y cualquier pérdida, lesión, muerte, daños, responsabilidad, reclamo, deficiencia, acción, 
+sentencia, interés, fallo, sanción, multa, costo o gasto, incluyendo mas sin limitarse a honorarios y gastos razonables de abogado, más el 
+costo incurrido por el ejercicio de todo derecho de indemnización aquí estipulado y el costo incurrido por gestiones de cobro ante cualquier 
+aseguradora, ya sea que dichos montos sean pagados o pagaderos (en forma colectiva, las 	“	Pérdidas	”), 	cuando las mismas surjan de o 
+ocurran en relación con los Bienes o por la negligencia, conducta indebida intencional, infracción de ley o contravención de esta Orden por 
+parte del Vendedor. El Vendedor no podrá convenir el arreglo de ninguna Pérdida sin el consentimiento previo por escrito de GIMSA o de 
+algún otro Indemnizable.
+20	. Indemnización por Propiedad Intelectual(a) El Vendedor deberá defender, indemnizar y dejar a salvo a GIMSA y a los Indemnizables 
+contra toda y cualquier Pérdida que surja de o tenga relación con algún reclamo alegando que el uso o posesión de los Bienes por parte de 
+GIMSA o algún Indemnizable haya infringido o violado alguna patente, derecho de autor, secreto industrial u otro derecho de propiedad 
+Signature
+Our Purchase order number must appear on your invoice and packing slips
+
+Orden de compra actualizada
+Sell to:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150
+    INT B ZONA INDUSTRIAL
+FRONTERA, COAH 	25680 MEX
+Order:	GGYD0585-3
+Date:	18/09/2025
+Página	7  de  8
+Phone:
+Fax:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150  INT 
+B ZONA INDUSTRIAL 
+FRONTERA, COAH, 	25680
+MEX
+Bill To:
+intelectual de algún tercero. El Vendedor no podrá convenir el arreglo de ninguna Pérdida de tales sin el consentimiento previo por escrito de 
+GIMSA o de algún otro Indemnizable.(b) En caso que se alegue que los Bienes o algún componente de ellos constituya una infracción y/o su 
+uso llegue a ser prohibido, el Vendedor, a su criterio y cuenta exclusiva, además de cumplir con sus obligaciones estipuladas en la Sección 
+20	(a), deberá: (i) procurar que GIMSA y los Indemnizables tengan el derecho a seguir utilizando los Bienes; (ii) sustituir los Bienes con un 
+producto sustancialmente equivalente y no infractor que sea aceptable para GIMSA a criterio exclusivo de éste; o (iii) modificar los Bienes de 
+manera que no infringen pero que conservan un desempeño sustancialmente equivalente, calidad que será determinada por GIMSA a su 
+exclusivo criterio. GIMSA tendrá el derecho a devolver los Bienes infractores o supuestamente infractores al Vendedor a cuenta de éste, en 
+cuyo caso el Vendedor deberá reembolsarle oportunamente a GIMSA el precio de compra.
+21	. Seguros. Durante el plazo de vigencia de esta Orden y durante un plazo de diez años después de la entrega de los Bienes al Lugar de 
+Entrega, el Vendedor deberá, a cuenta propia, contratar y mantener seguros plenamente vigentes y efectivos que incluyan, sin limitarse a, 
+seguros de responsabilidad comercial general (incluyendo sin limitarse a responsabilidad civil por productos defectuosos) por un monto no 
+menor a US	$5,000,000	, además de los demás tipos de seguros típicamente contratados por las principales empresas de la industria del 
+Vendedor. Dichos seguros deberán ser contratados con aseguradoras de renombre y finanzas sanas. Previa solicitud de GIMSA, el 
+Vendedor deberá proporcionar a GIMSA una constancia de seguros emitida por la aseguradora del Vendedor que compruebe la cobertura 
+se seguras especificada en esta Orden y que señale a GIMSA como asegurado adicional. El Vendedor deberá notificar a GIMSA con 	30 días 
+de anticipación en caso de la cancelación o modificación sustancial de la póliza de seguros del 	Vendedor. Salvo cuando sea prohibido por 
+ley, el Vendedor deberá requerir que su aseguradora renuncie a todo derecho de subrogación contra las aseguradoras de GIMSA y contra 
+GIMSA o los Indemnizables. Ninguna disposición de esta Sección 	21 limitará ni ampliará la responsabilidad del Vendedor ante GIMSA.
+22	.              Cumplimiento con la Legislación. El Vendedor se encuentra en cumplimiento y cumplirá con toda ley, reglamento y ordenanza 
+aplicable. El Vendedor cuenta con y mantendrá vigentes todas las licencias, permisos, autorizaciones y consentimientos que requiere para 
+cumplir con sus obligaciones estipuladas en esta Orden. Adicionalmente, el Vendedor deberá cumplir con toda la legislación en materia de 
+exportación e importación de todos los países involucrados en la venta de los Bienes objeto de esta Orden. El Vendedor asumirá toda 
+responsabilidad por los embarques de los Bienes que requieran cualquier autorización oficial para la importación. GIMSA podrá terminar 
+esta Orden en caso que alguna autoridad gubernamental imponga aranceles o cuotas compensatorias (antidumping). Además, el Vendedor 
+entiende que GIMSA debe cumplir con la Ley contra Prácticas Corruptas en el Extranjero de los Estados Unidos y la Legislación General del 
+Sistema Nacional Anticorrupción de México por lo que el Vendedor no deberá incurrir en ningún acto u omisión cuyo resultado ocasionaría 
+que GIMSA viole dicha ley. Específicamente, el Vendedor observará y se obliga a que ni el Vendedor mismo, ni directa o indirectamente, ni 
+sus empleados, representantes legales o sus agentes ofrecerán, darán o acordarán dar dinero, pago, regalo, consideración, soborno, 
+ventaja de cualquier tipo o algo de valor a cualquier persona que trabaje con o para para cualquier entidad gubernamental (incluyendo 
+empleados de empresas Para-Estatales) o a alguna empresa, con el objeto de obtener o retener algún negocio o cualquier otra ventaja 
+inapropiada que constituya una práctica ilegal o corrupta de conformidad con las leyes aplicables en los Estados Unidos Mexicanos y en los 
+Estados Unidos de América. Esta prohibición incluye que el Vendedor no ofrecerán o darán dinero o algo de valor, directa o indirectamente, 
+a un tercero sabiendo o teniendo alguna razón para creer que el pago será ofrecido o dado a una tercera persona o funcionario público a 
+efecto de influenciar a un funcionario público u otra persona para otorgarle un negocio a GIMSA u obtener un beneficio a ésta.
+23	. Terminación. (a) GIMSA podrá terminar esta Orden, total o parcialmente y en cualquier momento y con o sin causa justificada por Bienes 
+no entregados, previa notificación entregada al Vendedor con cinco días de anticipación. El Vendedor deberá cumplir oportunamente con 
+toda instrucción indicada en dicha notificación, además de: (i) tomar todas las acciones necesarias para terminar el trabajo, minimizando los 
+costos y responsabilidades relacionados con el trabajo terminado; (ii) proteger, preservar y entregar, de conformidad con las instrucciones de 
+GIMSA, toda propiedad relacionada con esta Orden en poder del Vendedor que sea propiedad de GIMSA o que será pagada por GIMSA 
+bajo esta Orden; y (iii) seguir ejecutando toda parte de esta Orden o cualquier otra orden no terminada por GIMSA.(b) Además de los otros 
+remedios a su disposición, GIMSA podrá terminar esta Orden por causa justificada y con vigencia inmediata previa notificación por escrito al 
+Vendedor, ya sea antes o después de aceptar los Bienes, en caso que: (i) el Vendedor no haya ejecutado o haya incumplido o de otra forma 
+haya contravenido esta Orden, ya sea total o parcialmente; (ii) el Vendedor se vuelva insolvente, se declare en quiebra, realice una 
+prevención a beneficio de acreedores, o inicie (voluntaria o involuntariamente) gestiones relacionadas con la quiebra, concurso o 
+reorganización; (iii) GIMSA, a su exclusivo criterio, lleque a dudar que el Vendedor siga cumpliendo con sus obligaciones, previa notificación 
+por escrito con diez días de anticipación en que GIMSA haya manifestado dicha duda y haya solicitado suficiente aseguramiento; y/o (iv) el 
+Vendedor haya contravenido la Sección 	28 (Cesión). En caso que GIMSA termine esta Orden por causa justificada, el único y exclusivo 
+remedio del Vendedor será el pago por los Bienes recibidos y aceptados por GIMSA antes de la terminación (sujeto a las disposiciones de la 
+Sección 	14	, Compensación de Deudas).(c) En caso de una terminación por conveniencia de GIMSA, si el Vendedor tiene en existencias o 
+pedidos en firme para Bienes completados o cualesquier productos incompletos o materia prima o materiales semiprocesados o 
+completados destinados para llenar esta Orden, entonces: (i) para Bienes completados, GIMSA recibirá la entrega de todos o parte de los 
+Bienes completados y pagará al Vendedor el Precio o (sin recibir entrega) pagará al Vendedor la diferencia (en su caso) entre el Precio y el 
+Signature
+Our Purchase order number must appear on your invoice and packing slips
+
+Orden de compra actualizada
+Sell to:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150
+    INT B ZONA INDUSTRIAL
+FRONTERA, COAH 	25680 MEX
+Order:	GGYD0585-3
+Date:	18/09/2025
+Página	8  de  8
+Phone:
+Fax:
+Gunderson-GIMSA S.A. de C.V.
+PRESIDENTE CARRANZA NO.	150  INT 
+B ZONA INDUSTRIAL 
+FRONTERA, COAH, 	25680
+MEX
+Bill To:
+precio de mercado (de ser inferior) al momento de terminación, menos el costo de transporte aplicable; (ii) para productos incompletos o 
+materia prima o materiales semiprocesados aplicables a esta Orden, GIMSA requerirá que el Vendedor entregue a GIMSA todos o parte de 
+dichos productos y materiales a cambio del porcentaje del Precio que represente la etapa de fabricación o (sin recibir entrega) pagará al 
+Vendedor el porcentaje del Precio que represente la etapa de fabricación menos el valor de mercado o el valor de chatarra de dichos 
+productos o materiales, cual sea mayor, menos el costo de transporte aplicable; y (iii) para los productos para los cuales el Vendedor tenga 
+pedido en firme, GIMSA podrá aceptar una cesión del derecho del Vendedor respecto a dicho pedido o bien pagar el costo (en su caso) de 
+liquidar o finiquitar la obligación del Vendedor respecto al pedido. Los pagos remitidos al Vendedor bajo esta Sección 	23	(c) constituirán el 
+único remedio disponible al Vendedor en caso de una terminación por conveniencia de GIMSA.
+24	. Responsabilidad Limitada. Ninguna disposición estipulada en esta Orden excluirá ni limitará: (a) la responsabilidad del Vendedor bajo las 
+Secciones 	18	, 	19	, 	20 y/o 	26 de los presente Términos; o (b) la responsabilidad del Vendedor por fraude, lesiones personales o muerte 
+causada por su negligencia o conducta indebida intencional. En ninguna circunstancia tendrá GIMSA responsabilidad ante el Vendedor ni 
+ante ningún tercero por concepto de daños secundarios, indirectos, ejemplares, punitivos o emergentes de ninguna clase, ni por lucro 
+cesante, pérdida de uso o pérdida de oportunidad. La responsabilidad de GIMSA ante cualquier clase de reclamo relacionado con los Bienes 
+o esta Orden no superará el monto del Precio en ninguna circunstancia.
+25	. Renuncia. Ninguna renuncia del Vendedor ni de GIMSA respecto a alguna disposición de esta Orden tendrá efecto a menos que sea 
+expresamente estipulada por escrito y firmada por la Parte renunciante. Salvo lo dispuesto al contrario en la OC, ninguna falta de ejercicio o 
+demora en el ejercicio de cualquier derecho, remedio, potestad o privilegio que surja de esta Orden constituirá ni será considerada como una 
+renuncia de tales derechos, remedios, potestades o privilegios. Asimismo, ningún ejercicio específico o parcial impedirá ningún otro ejercicio 
+de los mismos ni impedirá el ejercicio de ningún otro derecho, remedio, potestad o privilegio.
+26	. Información Confidencial. El Vendedor no deberá: (a) divulgar ninguna Información Confidencial de GIMSA a ninguna persona que no 
+sea empleado del Vendedor que necesita dicha Información para poder cumplir con las obligaciones del Vendedor bajo esta Orden; o (b) 
+utilizar ninguna Información Confidencial de GIMSA para ningún propósito que no sea para cumplir con las obligaciones del Vendedor bajo 
+esta Orden. El término "Información Confidencial" significa e incluye toda información no pública propiedad de GIMSA o sobre GIMSA, sus 
+clientes, empleados y proveedores, incluyendo sin limitarse a especificaciones, muestras, patrones, planos, dibujos, documentos, datos, 
+operaciones comerciales, listados de clientes, precios, descuentos o devoluciones de efectivo por compras, ya sea divulgada o accesada en 
+forma escrita, electrónica, verbal, por observación o de cualquier otra manera, forma o medio, ya esté o no marcada, designada o de otra 
+forma identificada como de carácter confidencial. Sin ampliar de ninguna manera las restricciones dispuestas en las anteriores Subsecciones 
+(a) y (b), el Vendedor tendrá responsabilidad por cualquier contravención de esta Sección 	26 o cualquier otra disposición de esta Orden por 
+parte de cualquier empleado o apoderado del Vendedor. El Vendedor deberá: (x) devolver oportunamente todo documento y demás 
+materiales recibidos de GIMSA cuando: (i) GIMSA se lo solicite por escrito; o (ii) cuando el Vendedor haya cumplido con cabalidad sus 
+obligaciones bajo esta Orden; (y) destruir dichos documentos y materiales previa solicitud por escrito de GIMSA; y (z) procurar que un 
+ejecutivo del Vendedor certifique por escrito que el Vendedor haya cumplido con dichas obligaciones. En caso de cualquier contravención de 
+esta Sección 	26	, GIMSA tendrá derecho a recurrir al amparo judicial.
+27	. Demora Justificada. Ninguna de las Partes tendrá responsabilidad ante la otra por ninguna demora o incumplimiento de sus obligaciones 
+bajo esta Orden en la medida en que la demora o incumplimiento haya sido ocasionado por un evento o circunstancia fuera del control 
+razonable de dicha Parte, sin que mediara culpa o negligencia de su parte y cuando la naturaleza de la demora o incumplimiento sea tal que 
+dicha Parte no pudiese preverlo, o aun siendo previsible fuese inevitable (un 	“	Evento de Demora""). La Parte cuya desempeño haya sido 
+afectado por el Evento de Demora deberá notificar oportunamente a su contraparte sobre el Evento de Demora. Los Eventos de Demora 
+incluyen mas no se limitan a fuerzas mayores, actos de enemigos públicos, restricciones gubernamentales, inundaciones, incendios, 
+terremotos, explosiones, epidemias, guerras, invasiones, hostilidades, actos terroristas, disturbios sociales, huelgas, embargos o trastornos 
+industriales. La eventual dificultad económica del Vendedor, las variaciones en las condiciones del mercado y la escasez de materiales y/o 
+mano de obra no se considerarán Eventos de Demora. El Vendedor deberá hacer todo esfuerzo diligente posible para resolver la demora o 
+el incumplimiento de su desempeño, procurar minimizar los efectos de cualquier Evento de Demora, y volver al desempeño normal bajo esta 
+Orden. En caso que un Evento de Demora impida al Vendedor cumplir con sus obligaciones bajo esta Orden por un período mayor a cinco 
+días hábiles, GIMSA podrá terminar esta Orden inmediatamente por causa justificada al notificar por escrito al Vendedor. Ninguna 
+disposición de esta sección eximirá al Vendedor de su responsabilidad por no contar con los sistemas y planes de se
+Signature
+Our Purchase order number must appear on your invoice and packing slips
+Datos Detectados
+ Número de Orden
+de
+
+ Fecha
+18/09/2025
+
+ Total
+MXN 1221174.72
+
+Mapeo de Productos
+Revisa y mapea manualmente los productos detectados con los de tu catálogo
+Se detectaron
+149
+productos con información detallada
+Item	Código	Descripción	Cantidad	UM	Precio Unit.	Campos Adicionales	Acción
+1	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+2	PRESIDENTE	CARRANZA NO. 150	-	-	-	4 campos detectados
+3	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+4	PRESIDENTE	CARRANZA NO. 150 INT	-	-	-	4 campos detectados
+5	Payment	Terms Delivery Terms Delivery term places Delivery Mode	-	-	-	4 campos detectados
+6	100025517-S	100025517	-	-	-	4 campos detectados
+7	OUTLET	SADDLE PL 1 3/4 X 12 1/4	-	-	-	4 campos detectados
+8	100027094-S	100027094	-	-	-	4 campos detectados
+9	100001121-S	100001121	-	-	-	4 campos detectados
+10	STAINLESS	STEEL SEAMLESS	-	EA	-	4 campos detectados
+11	ALMADEN	SA	-	EA	-	4 campos detectados
+12	Account	number: V00424	-	-	-	4 campos detectados
+13	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+14	PRESIDENTE	CARRANZA NO. 150	-	-	-	4 campos detectados
+15	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+16	PRESIDENTE	CARRANZA NO. 150	-	-	-	4 campos detectados
+17	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+18	PRESIDENTE	CARRANZA NO. 150 INT	-	-	-	4 campos detectados
+19	100035922-S	100035922	-	-	-	4 campos detectados
+20	RELIEF	VALVE NOZZLE FLANGE,	-	-	-	4 campos detectados
+21	100006591-S	100006591	-	-	-	4 campos detectados
+22	100042302-S	100042302	-	-	-	4 campos detectados
+23	100018926-S	100018926	-	-	-	4 campos detectados
+24	RELEASE	ROD, RB 1/2 X 136 1/2	-	EA	-	4 campos detectados
+25	100022948-S	100022948	-	-	-	4 campos detectados
+26	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+27	PRESIDENTE	CARRANZA NO. 150	-	-	-	4 campos detectados
+28	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+29	PRESIDENTE	CARRANZA NO. 150 INT	-	-	-	4 campos detectados
+30	100042303-S	100042303	-	-	-	4 campos detectados
+31	271241-17-S	271241-17	-	EA	-	4 campos detectados
+32	271375-02-S	271375-02	-	-	-	4 campos detectados
+33	Nuestro	número de orden de compra debe aparecer en su factura	-	-	-	4 campos detectados
+34	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+35	PRESIDENTE	CARRANZA NO. 150	-	-	-	4 campos detectados
+36	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+37	PRESIDENTE	CARRANZA NO. 150 INT	-	-	-	4 campos detectados
+38	TERMINOS	Y CONDICIONES DE COMPRA DE GUNDERSON-GIMSA	-	-	-	4 campos detectados
+39	oferta	de parte de Gunderson-GIMSA, S.A. de C.V. ("GIMSA") para comprar los bienes y/o servicios especificados en la portada de la OC	-	-	-	4 campos detectados
+40	suplanta	a todo entendimiento, acuerdo, negociación, representación, garantía y comunicación anterior o contemporánea, tanto por escrito	-	-	-	4 campos detectados
+41	expresamente	limita la aceptación del Vendedor a los términos y condiciones de esta Orden. Los términos y condiciones aquí estipuladas	-	-	-	4 campos detectados
+42	Vendedor	entregue a GIMSA en relación con esta Orden.	-	-	-	4 campos detectados
+43	incluyendo	sin limitación, la certificación AAR, usted reconoce que este tipo de certificaciones, aprobaciones o designaciones se han	-	-	-	4 campos detectados
+44	obtenido	a tiempo y sean exactos y actualizados.	-	-	-	4 campos detectados
+45	Bienes	en su totalidad en la Fecha de Entrega, GIMSA podrá terminar esta Orden inmediatamente mediante notificación por escrito	-	-	-	4 campos detectados
+46	entregada	al Vendedor, y el Vendedor deberá indemnizar a GIMSA por concepto de cualquier pérdida, reclamo, daños, costos y gastos	-	-	-	4 campos detectados
+47	razonables	que sean atribuibles a la falta del Vendedor de entregar los Bienes en la Fecha de Entrega.	-	-	-	4 campos detectados
+48	respecto	a cualquiera de los siguientes puntos: (a) las especificaciones, planos y datos sobre los Bienes cuando se trata de Bienes	-	-	-	4 campos detectados
+49	fabricados	especialmente por el Vendedor; (b) la cantidad; (c) los métodos de transporte o embalaje; (d) la Fecha de Entrega; (e) el Lugar de	-	UN	-	4 campos detectados
+50	Entrega	(definido abajo); y (f) cualquier otro asunto relacionado con esta Orden. Cuando alguna modificación solicitada por GIMSA ocasione	-	UN	-	4 campos detectados
+51	Bienes	excedentes y devolver los Bienes rechazados al Vendedor a cuenta y riesgo de éste. Si el Vendedor entrega una cantidad mayor o	-	UN	-	4 campos detectados
+52	ajustado	sobre una base prorrateada.	-	-	-	4 campos detectados
+53	normalmente	observadas por el receptor, salvo indicaciones al contrario emitidas por GIMSA.	-	-	-	4 campos detectados
+54	Cuando	GIMSA haga abonos contra el saldo del precio, la propiedad de los Bienes será transferida a GIMSA proporcionalmente según el	-	-	-	4 campos detectados
+55	indicaciones	de GIMSA o, en su ausencia, de manera que garantice que los Bienes serán entregados sin sufrir daño alguno. Cuando GIMSA	-	-	-	4 campos detectados
+56	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+57	PRESIDENTE	CARRANZA NO. 150	-	-	-	4 campos detectados
+58	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+59	PRESIDENTE	CARRANZA NO. 150 INT	-	-	-	4 campos detectados
+60	indique	específicamente que su propósito sea para modificar esta Orden, y sea firmada por un representante autorizado de GIMSA.	-	-	-	4 campos detectados
+61	cualquier	parte de los Bienes si determina que los mismos sean inconformes o defectuosos. En caso que GIMSA rechace una parte de los	-	UN	-	4 campos detectados
+62	oportunamente	los Bienes inconformes a cuenta propia y sufragará todo gasto incurrido, incluyendo sin limitarse al pago de los gastos de	-	UN	-	4 campos detectados
+63	transporte	para devolver los Bienes inconformes y para entregar los Bienes sustituidos. Si el Vendedor no entregue los Bienes sustituidos en	-	-	-	4 campos detectados
+64	terminar	esta Orden por causa justificada de acuerdo con las disposiciones de la Sección 23 . Ninguna inspección ni otra acción realizada por	-	-	-	4 campos detectados
+65	obligaciones	del Vendedor establecidas en esta Orden. Asimismo, GIMSA tendrá el derecho a realizar inspecciones adicionales después de	-	-	-	4 campos detectados
+66	indicado	en el listado de precios del Vendedor vigente para la fecha de esta Orden; o (c) el precio menor que el Vendedor haya cobrado a	-	-	-	4 campos detectados
+67	cualquiera	de sus demás clientes por concepto de bienes similares durante los doce meses anteriores a la fecha de esta Orden. Salvo lo	-	-	-	4 campos detectados
+68	dispuesto	al contrario por la OC, el Precio incluirá todo embalaje, costos de transporte hasta el Lugar de Entrega, seguros, aranceles y	-	-	-	4 campos detectados
+69	consentimiento	por escrito de GIMSA.	-	-	-	4 campos detectados
+70	conformidad	con la presente Orden. GIMSA podrá rechazar facturas prematuras, en cuyo caso el Vendedor podrá volver a presentarlas. Las	-	-	-	4 campos detectados
+71	facturas	emitidas por Vendedores que sean contribuyentes mexicanos inscritos deberán cumplir con todos los requisitos fiscales aplicables,	-	-	-	4 campos detectados
+72	cumpliendo	con sus obligaciones bajo esta Orden y bajo cualquier otro contrato con GIMSA aun estando pendiente resolución una disputa	-	UN	-	4 campos detectados
+73	relacionada	con esta Orden. Salvo lo especificado al contrario por la OC, todo monto pagadero bajo esta Orden deberá ser pagado en	-	UN	-	4 campos detectados
+74	aprovechar	dicha oferta, el Comprador tendrá derecho a aprovechar el descuento al pagar, para el día 25 del mes, la factura correspondiente	-	UN	-	4 campos detectados
+75	fechada	entre el día 1 ro y el 15 del mismo mes, o bien al pagar para el día 10 del mes siguiente aquella factura fechada entre el día 16 y el	-	UN	-	4 campos detectados
+76	entregados	al Lugar de Entrega, incluyendo mas sin limitarse a los impuestos de valor agregado y demás cargos impuestos a los Bienes	-	-	-	4 campos detectados
+77	Vendedor	desglose el monto correspondiente a dicho Impuesto al Valor Agregado en la factura correspondiente. El Impuesto al Valor	-	-	-	4 campos detectados
+78	Agregado	pagado por GIMSA al Vendedor de acuerdo con la legislación fiscal mexicana aplicable deberá ser debidamente contabilizado por	-	-	-	4 campos detectados
+79	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+80	PRESIDENTE	CARRANZA NO. 150	-	-	-	4 campos detectados
+81	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+82	PRESIDENTE	CARRANZA NO. 150 INT	-	-	-	4 campos detectados
+83	mismos	en su poder en calidad de depositario, por lo cual el Vendedor emitirá y entregará a GIMSA una constancia de recibo debidamente	-	UN	-	4 campos detectados
+84	notarizada	por un notario público mexicano y debidamente inscrita por el Vendedor en el Registro Público de Comercio aplicable al domicilio	-	-	-	4 campos detectados
+85	perpetua	y global para copiar, modificar, utilizar y distribuir a cualquier tercero dichas obras o bienes, incluyendo sin limitarse a planos,	-	-	-	4 campos detectados
+86	dibujos	y especificaciones para los Bienes que se clasifiquen en esta categoría, y GIMSA podrá utilizar dichos planos, dibujos y	-	-	-	4 campos detectados
+87	especificaciones	para cualquier propósito.(d) El Vendedor: (i) utilizará la propiedad de GIMSA exclusivamente para el beneficio de GIMSA (y	-	UN	-	4 campos detectados
+88	equivalente	al costo de reposición, con toda pérdida pagadera a GIMSA (y el Vendedor entregará copias de las pólizas o constancias de	-	UN	-	4 campos detectados
+89	dichos	seguros a GIMSA previa solicitud); (iii) devolverá dicha propiedad previa solicitud por escrito de GIMSA o bien cuando el Vendedor ya	-	UN	-	4 campos detectados
+90	Vendedor	encuentre en dichos documentos. En caso que el Vendedor no consulte con GIMSA con el fin de resolver alguna contradicción o	-	-	-	4 campos detectados
+91	incongruencia	percibida, el Vendedor tendrá responsabilidad exclusiva por los errores que pudiesen resultar debido a dicha contradicción o	-	UN	-	4 campos detectados
+92	especificados	por GIMSA; (ii) toda descripción, promesa y muestra ofrecida por el Vendedor; y (iii) hasta el punto que no infrinja las	-	UN	-	4 campos detectados
+93	Subsecciones	(b)(i) y (ii), los estándares de la industria y las leyes aplicables; (c) serán idóneos para su propósito proyectado y funcionarán	-	-	-	4 campos detectados
+94	respecto	a las garantías, cual sea posterior. Si GIMSA notifica al Vendedor respecto a algún incumplimiento con esta Sección 18 , el	-	-	-	4 campos detectados
+95	Vendedor	deberá, a cuenta propia, sustituir o reparar de manera oportuna los Bienes defectuosos o inconformes y sufragar todo gasto	-	-	-	4 campos detectados
+96	entregar	los Bienes reparados o sustituidos a GIMSA. Las garantías estipuladas en esta Sección 18 beneficiarán tanto a GIMSA como a sus	-	-	-	4 campos detectados
+97	vigente	durante los cinco años posteriores a la fecha en que GIMSA haya entregado los equipos a su cliente.	-	-	-	4 campos detectados
+98	ocurran	en relación con los Bienes o por la negligencia, conducta indebida intencional, infracción de ley o contravención de esta Orden por	-	-	-	4 campos detectados
+99	contra	toda y cualquier Pérdida que surja de o tenga relación con algún reclamo alegando que el uso o posesión de los Bienes por parte de	-	-	-	4 campos detectados
+100	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+101	PRESIDENTE	CARRANZA NO. 150	-	-	-	4 campos detectados
+102	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+103	PRESIDENTE	CARRANZA NO. 150 INT	-	-	-	4 campos detectados
+104	intelectual	de algún tercero. El Vendedor no podrá convenir el arreglo de ninguna Pérdida de tales sin el consentimiento previo por escrito de	-	-	-	4 campos detectados
+105	producto	sustancialmente equivalente y no infractor que sea aceptable para GIMSA a criterio exclusivo de éste; o (iii) modificar los Bienes de	-	UN	-	4 campos detectados
+106	manera	que no infringen pero que conservan un desempeño sustancialmente equivalente, calidad que será determinada por GIMSA a su	-	UN	-	4 campos detectados
+107	exclusivo	criterio. GIMSA tendrá el derecho a devolver los Bienes infractores o supuestamente infractores al Vendedor a cuenta de éste, en	-	UN	-	4 campos detectados
+108	seguros	de responsabilidad comercial general (incluyendo sin limitarse a responsabilidad civil por productos defectuosos) por un monto no	-	UN	$5000000	4 campos detectados
+109	Vendedor	deberá proporcionar a GIMSA una constancia de seguros emitida por la aseguradora del Vendedor que compruebe la cobertura	-	-	$5000000	4 campos detectados
+110	cumplir	con sus obligaciones estipuladas en esta Orden. Adicionalmente, el Vendedor deberá cumplir con toda la legislación en materia de	-	-	-	4 campos detectados
+111	responsabilidad	por los embarques de los Bienes que requieran cualquier autorización oficial para la importación. GIMSA podrá terminar	-	-	-	4 campos detectados
+112	entiende	que GIMSA debe cumplir con la Ley contra Prácticas Corruptas en el Extranjero de los Estados Unidos y la Legislación General del	-	-	-	4 campos detectados
+113	Sistema	Nacional Anticorrupción de México por lo que el Vendedor no deberá incurrir en ningún acto u omisión cuyo resultado ocasionaría	-	-	-	4 campos detectados
+114	ventaja	de cualquier tipo o algo de valor a cualquier persona que trabaje con o para para cualquier entidad gubernamental (incluyendo	-	-	-	4 campos detectados
+115	empleados	de empresas Para-Estatales) o a alguna empresa, con el objeto de obtener o retener algún negocio o cualquier otra ventaja	-	-	-	4 campos detectados
+116	inapropiada	que constituya una práctica ilegal o corrupta de conformidad con las leyes aplicables en los Estados Unidos Mexicanos y en los	-	UN	-	4 campos detectados
+117	Estados	Unidos de América. Esta prohibición incluye que el Vendedor no ofrecerán o darán dinero o algo de valor, directa o indirectamente,	-	UN	-	4 campos detectados
+118	efecto	de influenciar a un funcionario público u otra persona para otorgarle un negocio a GIMSA u obtener un beneficio a ésta.	-	UN	-	4 campos detectados
+119	costos	y responsabilidades relacionados con el trabajo terminado; (ii) proteger, preservar y entregar, de conformidad con las instrucciones de	-	-	-	4 campos detectados
+120	remedios	a su disposición, GIMSA podrá terminar esta Orden por causa justificada y con vigencia inmediata previa notificación por escrito al	-	-	-	4 campos detectados
+121	Vendedor	haya contravenido la Sección 28 (Cesión). En caso que GIMSA termine esta Orden por causa justificada, el único y exclusivo	-	-	-	4 campos detectados
+122	remedio	del Vendedor será el pago por los Bienes recibidos y aceptados por GIMSA antes de la terminación (sujeto a las disposiciones de la	-	-	-	4 campos detectados
+123	pedidos	en firme para Bienes completados o cualesquier productos incompletos o materia prima o materiales semiprocesados o	-	-	-	4 campos detectados
+124	completados	destinados para llenar esta Orden, entonces: (i) para Bienes completados, GIMSA recibirá la entrega de todos o parte de los	-	-	-	4 campos detectados
+125	Bienes	completados y pagará al Vendedor el Precio o (sin recibir entrega) pagará al Vendedor la diferencia (en su caso) entre el Precio y el	-	-	-	4 campos detectados
+126	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+127	PRESIDENTE	CARRANZA NO. 150	-	-	-	4 campos detectados
+128	Gunderson-GIMSA	S.A. de C.V.	-	-	-	4 campos detectados
+129	PRESIDENTE	CARRANZA NO. 150 INT	-	-	-	4 campos detectados
+130	precio	de mercado (de ser inferior) al momento de terminación, menos el costo de transporte aplicable; (ii) para productos incompletos o	-	-	-	4 campos detectados
+131	materia	prima o materiales semiprocesados aplicables a esta Orden, GIMSA requerirá que el Vendedor entregue a GIMSA todos o parte de	-	-	-	4 campos detectados
+132	dichos	productos y materiales a cambio del porcentaje del Precio que represente la etapa de fabricación o (sin recibir entrega) pagará al	-	-	-	4 campos detectados
+133	Vendedor	el porcentaje del Precio que represente la etapa de fabricación menos el valor de mercado o el valor de chatarra de dichos	-	-	-	4 campos detectados
+134	productos	o materiales, cual sea mayor, menos el costo de transporte aplicable; y (iii) para los productos para los cuales el Vendedor tenga	-	-	-	4 campos detectados
+135	pedido	en firme, GIMSA podrá aceptar una cesión del derecho del Vendedor respecto a dicho pedido o bien pagar el costo (en su caso) de	-	-	-	4 campos detectados
+136	liquidar	o finiquitar la obligación del Vendedor respecto al pedido. Los pagos remitidos al Vendedor bajo esta Sección 23 (c) constituirán el	-	-	-	4 campos detectados
+137	Secciones	18 , 19 , 20 y/o 26 de los presente Términos; o (b) la responsabilidad del Vendedor por fraude, lesiones personales o muerte	-	-	-	4 campos detectados
+138	causada	por su negligencia o conducta indebida intencional. En ninguna circunstancia tendrá GIMSA responsabilidad ante el Vendedor ni	-	-	-	4 campos detectados
+139	expresamente	estipulada por escrito y firmada por la Parte renunciante. Salvo lo dispuesto al contrario en la OC, ninguna falta de ejercicio o	-	-	-	4 campos detectados
+140	demora	en el ejercicio de cualquier derecho, remedio, potestad o privilegio que surja de esta Orden constituirá ni será considerada como una	-	-	-	4 campos detectados
+141	renuncia	de tales derechos, remedios, potestades o privilegios. Asimismo, ningún ejercicio específico o parcial impedirá ningún otro ejercicio	-	-	-	4 campos detectados
+142	utilizar	ninguna Información Confidencial de GIMSA para ningún propósito que no sea para cumplir con las obligaciones del Vendedor bajo	-	-	-	4 campos detectados
+143	operaciones	comerciales, listados de clientes, precios, descuentos o devoluciones de efectivo por compras, ya sea divulgada o accesada en	-	-	-	4 campos detectados
+144	materiales	recibidos de GIMSA cuando: (i) GIMSA se lo solicite por escrito; o (ii) cuando el Vendedor haya cumplido con cabalidad sus	-	UN	-	4 campos detectados
+145	obligaciones	bajo esta Orden; (y) destruir dichos documentos y materiales previa solicitud por escrito de GIMSA; y (z) procurar que un	-	-	-	4 campos detectados
+146	ejecutivo	del Vendedor certifique por escrito que el Vendedor haya cumplido con dichas obligaciones. En caso de cualquier contravención de	-	UN	-	4 campos detectados
+147	razonable	de dicha Parte, sin que mediara culpa o negligencia de su parte y cuando la naturaleza de la demora o incumplimiento sea tal que	-	UN	-	4 campos detectados
+148	afectado	por el Evento de Demora deberá notificar oportunamente a su contraparte sobre el Evento de Demora. Los Eventos de Demora	-	UN	-	4 campos detectados
+149	incluyen	mas no se limitan a fuerzas mayores, actos de enemigos públicos, restricciones gubernamentales, inundaciones, incendios,	-	UN	-	4 campos detectados
+Historial de PDFs Procesados
+ID	Archivo	Fecha Proceso	Número Orden	Productos Detectados	Estatus	Acciones
+2	 GGYD0585-3 (1).pdf	24/10/2025, 09:18 p.m.	de	Ninguno	Pendiente	 
+1	 GGYD0585-3 (1).pdf	24/10/2025, 09:16 p.m.	de	Ninguno	Pendiente	 
+CINASA Logo
+ 2025 Procesamiento de PDFs - Sistema Empresarial

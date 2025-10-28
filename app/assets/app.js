@@ -6,19 +6,18 @@ let direccionActual = 'ASC';
 document.addEventListener('DOMContentLoaded', function() {
     cargarFiltros();
     cargarClientes();
-    
-    document.getElementById('btnNuevoCliente').addEventListener('click', abrirModalNuevo);
-    document.getElementById('btnGuardarCliente').addEventListener('click', guardarCliente);
+
+    document.getElementById('btnNuevoCliente').addEventListener('click', abrirModalCrear);
     document.getElementById('btnBuscar').addEventListener('click', aplicarFiltros);
     document.getElementById('btnLimpiarFiltros').addEventListener('click', limpiarFiltros);
     document.getElementById('btnExportarCSV').addEventListener('click', exportarCSV);
-    
+
     document.getElementById('buscar').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             aplicarFiltros();
         }
     });
-    
+
     document.querySelectorAll('.sortable').forEach(th => {
         th.addEventListener('click', function() {
             const columna = this.dataset.column;
@@ -239,18 +238,228 @@ function limpiarFiltros() {
     cargarClientes();
 }
 
-function abrirModalNuevo() {
-    document.getElementById('formCliente').reset();
-    document.getElementById('cliente_id').value = '';
-    document.getElementById('modalClienteTitle').textContent = 'Nuevo Cliente';
-    document.getElementById('estatus').value = 'activo';
-    document.getElementById('pais').value = 'México';
-    document.getElementById('moneda').value = 'MXN';
-    document.getElementById('dias_credito').value = '0';
-    ocultarErrores();
-    
+function abrirModalCrear() {
+    crearYMostrarModal(null);
+}
+
+function crearYMostrarModal(clienteData) {
+    // Generar HTML del modal
+    const modalHTML = generarHTMLModal(clienteData);
+
+    // Remover modal existente si lo hay
+    const existingModal = document.getElementById('modalCliente');
+    if (existingModal) {
+        existingModal.remove();
+    }
+
+    // Limpiar cualquier backdrop huérfano
+    document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+    document.body.classList.remove('modal-open');
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+
+    // Insertar modal en el DOM
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    // Agregar event listener al botón guardar
+    document.getElementById('btnGuardarCliente').addEventListener('click', guardarCliente);
+
+    // Mostrar modal
     const modal = new bootstrap.Modal(document.getElementById('modalCliente'));
     modal.show();
+}
+
+function generarHTMLModal(clienteData) {
+    const isEdit = clienteData !== null;
+    const titulo = isEdit ? 'Editar Cliente' : 'Nuevo Cliente';
+
+    return `
+        <div class="modal fade" id="modalCliente" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title flex items-center" id="modalClienteTitle">
+                            <i class="fas fa-${isEdit ? 'edit' : 'user-plus'} mr-2"></i>
+                            <span>${titulo}</span>
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formCliente">
+                            <input type="hidden" id="cliente_id" name="id" value="${isEdit ? clienteData.id : ''}">
+
+                            <div class="alert alert-danger d-none" id="erroresCliente"></div>
+
+                            <h6 class="border-bottom pb-2 mb-3 flex items-center text-blue-700">
+                                <div class="bg-blue-100 p-2 rounded-lg mr-2">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <span>Datos Fiscales</span>
+                            </h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-8">
+                                    <label for="razon_social" class="form-label">Razón Social <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="razon_social" name="razon_social" required maxlength="250" value="${isEdit ? escapeHtml(clienteData.razon_social) : ''}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="rfc" class="form-label">RFC <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control text-uppercase" id="rfc" name="rfc" required maxlength="14" pattern="[A-ZÑ&]{3,4}\\d{6}[A-Z0-9]{3}" value="${isEdit ? clienteData.rfc : ''}">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="regimen_fiscal" class="form-label">Régimen Fiscal</label>
+                                    <input type="text" class="form-control" id="regimen_fiscal" name="regimen_fiscal" maxlength="100" value="${isEdit ? escapeHtml(clienteData.regimen_fiscal || '') : ''}">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="uso_cfdi" class="form-label">Uso CFDI</label>
+                                    <select class="form-select" id="uso_cfdi" name="uso_cfdi">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="G01" ${isEdit && clienteData.uso_cfdi === 'G01' ? 'selected' : ''}>G01 - Adquisición de mercancías</option>
+                                        <option value="G02" ${isEdit && clienteData.uso_cfdi === 'G02' ? 'selected' : ''}>G02 - Devoluciones</option>
+                                        <option value="G03" ${isEdit && clienteData.uso_cfdi === 'G03' ? 'selected' : ''}>G03 - Gastos en general</option>
+                                        <option value="I04" ${isEdit && clienteData.uso_cfdi === 'I04' ? 'selected' : ''}>I04 - Construcciones</option>
+                                        <option value="P01" ${isEdit && clienteData.uso_cfdi === 'P01' ? 'selected' : ''}>P01 - Por definir</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="estatus" class="form-label">Estatus <span class="text-danger">*</span></label>
+                                    <select class="form-select" id="estatus" name="estatus" required>
+                                        <option value="activo" ${!isEdit || clienteData.estatus === 'activo' ? 'selected' : ''}>Activo</option>
+                                        <option value="suspendido" ${isEdit && clienteData.estatus === 'suspendido' ? 'selected' : ''}>Suspendido</option>
+                                        <option value="bloqueado" ${isEdit && clienteData.estatus === 'bloqueado' ? 'selected' : ''}>Bloqueado</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <h6 class="border-bottom pb-2 mb-3 flex items-center text-blue-700">
+                                <div class="bg-blue-100 p-2 rounded-lg mr-2">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <span>Ubicación</span>
+                            </h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-9">
+                                    <label for="direccion" class="form-label">Dirección Completa</label>
+                                    <textarea class="form-control" id="direccion" name="direccion" rows="2">${isEdit ? escapeHtml(clienteData.direccion || '') : ''}</textarea>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="pais" class="form-label">País</label>
+                                    <input type="text" class="form-control" id="pais" name="pais" value="${isEdit ? escapeHtml(clienteData.pais) : 'México'}" maxlength="100">
+                                </div>
+                            </div>
+
+                            <h6 class="border-bottom pb-2 mb-3 flex items-center text-blue-700">
+                                <div class="bg-blue-100 p-2 rounded-lg mr-2">
+                                    <i class="fas fa-address-book"></i>
+                                </div>
+                                <span>Datos de Contacto</span>
+                            </h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-4">
+                                    <label for="contacto_principal" class="form-label">Contacto Principal</label>
+                                    <input type="text" class="form-control" id="contacto_principal" name="contacto_principal" maxlength="150" value="${isEdit ? escapeHtml(clienteData.contacto_principal || '') : ''}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="telefono" class="form-label">Teléfono</label>
+                                    <input type="text" class="form-control" id="telefono" name="telefono" maxlength="30" value="${isEdit ? escapeHtml(clienteData.telefono || '') : ''}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="correo" class="form-label">Correo Electrónico</label>
+                                    <input type="email" class="form-control" id="correo" name="correo" maxlength="150" value="${isEdit ? escapeHtml(clienteData.correo || '') : ''}">
+                                </div>
+                            </div>
+
+                            <h6 class="border-bottom pb-2 mb-3 flex items-center text-blue-700">
+                                <div class="bg-blue-100 p-2 rounded-lg mr-2">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <span>Condiciones Comerciales</span>
+                            </h6>
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-3">
+                                    <label for="dias_credito" class="form-label">Días de Crédito</label>
+                                    <select class="form-select" id="dias_credito" name="dias_credito">
+                                        <option value="0" ${!isEdit || clienteData.dias_credito == 0 ? 'selected' : ''}>Contado (0 días)</option>
+                                        <option value="15" ${isEdit && clienteData.dias_credito == 15 ? 'selected' : ''}>15 días</option>
+                                        <option value="30" ${isEdit && clienteData.dias_credito == 30 ? 'selected' : ''}>30 días</option>
+                                        <option value="45" ${isEdit && clienteData.dias_credito == 45 ? 'selected' : ''}>45 días</option>
+                                        <option value="60" ${isEdit && clienteData.dias_credito == 60 ? 'selected' : ''}>60 días</option>
+                                        <option value="90" ${isEdit && clienteData.dias_credito == 90 ? 'selected' : ''}>90 días</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="limite_credito" class="form-label">Límite de Crédito</label>
+                                    <input type="number" class="form-control" id="limite_credito" name="limite_credito" step="0.01" min="0" value="${isEdit ? clienteData.limite_credito : '0.00'}">
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="moneda" class="form-label">Moneda</label>
+                                    <select class="form-select" id="moneda" name="moneda">
+                                        <option value="MXN" ${!isEdit || clienteData.moneda === 'MXN' ? 'selected' : ''}>MXN - Peso Mexicano</option>
+                                        <option value="USD" ${isEdit && clienteData.moneda === 'USD' ? 'selected' : ''}>USD - Dólar</option>
+                                        <option value="EUR" ${isEdit && clienteData.moneda === 'EUR' ? 'selected' : ''}>EUR - Euro</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="condiciones_pago" class="form-label">Condiciones de Pago</label>
+                                    <input type="text" class="form-control" id="condiciones_pago" name="condiciones_pago" maxlength="100" value="${isEdit ? escapeHtml(clienteData.condiciones_pago || '') : ''}">
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="metodo_pago" class="form-label">Método de Pago</label>
+                                    <select class="form-select" id="metodo_pago" name="metodo_pago">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="PUE" ${isEdit && clienteData.metodo_pago === 'PUE' ? 'selected' : ''}>PUE - Pago en una sola exhibición</option>
+                                        <option value="PPD" ${isEdit && clienteData.metodo_pago === 'PPD' ? 'selected' : ''}>PPD - Pago en parcialidades</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="forma_pago" class="form-label">Forma de Pago</label>
+                                    <select class="form-select" id="forma_pago" name="forma_pago">
+                                        <option value="">Seleccionar...</option>
+                                        <option value="01" ${isEdit && clienteData.forma_pago === '01' ? 'selected' : ''}>01 - Efectivo</option>
+                                        <option value="02" ${isEdit && clienteData.forma_pago === '02' ? 'selected' : ''}>02 - Cheque</option>
+                                        <option value="03" ${isEdit && clienteData.forma_pago === '03' ? 'selected' : ''}>03 - Transferencia</option>
+                                        <option value="04" ${isEdit && clienteData.forma_pago === '04' ? 'selected' : ''}>04 - Tarjeta de crédito</option>
+                                        <option value="28" ${isEdit && clienteData.forma_pago === '28' ? 'selected' : ''}>28 - Tarjeta de débito</option>
+                                        <option value="99" ${isEdit && clienteData.forma_pago === '99' ? 'selected' : ''}>99 - Por definir</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="vendedor_asignado" class="form-label">Vendedor Asignado</label>
+                                    <input type="text" class="form-control" id="vendedor_asignado" name="vendedor_asignado" maxlength="100" value="${isEdit ? escapeHtml(clienteData.vendedor_asignado || '') : ''}">
+                                </div>
+                            </div>
+
+                            <h6 class="border-bottom pb-2 mb-3 flex items-center text-blue-700">
+                                <div class="bg-blue-100 p-2 rounded-lg mr-2">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <span>Información Bancaria</span>
+                            </h6>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="banco" class="form-label">Banco</label>
+                                    <input type="text" class="form-control" id="banco" name="banco" maxlength="150" value="${isEdit ? escapeHtml(clienteData.banco || '') : ''}">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="cuenta_bancaria" class="form-label">Cuenta Bancaria</label>
+                                    <input type="text" class="form-control" id="cuenta_bancaria" name="cuenta_bancaria" maxlength="50" value="${isEdit ? escapeHtml(clienteData.cuenta_bancaria || '') : ''}">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary group" data-bs-dismiss="modal">
+                            <i class="fas fa-times transition-transform group-hover:rotate-90"></i>
+                            <span class="ml-1">Cancelar</span>
+                        </button>
+                        <button type="button" class="btn btn-primary group" id="btnGuardarCliente">
+                            <i class="fas fa-save transition-transform group-hover:scale-125"></i>
+                            <span class="ml-1">Guardar Cliente</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
 }
 
 function editarCliente(id) {
@@ -258,34 +467,7 @@ function editarCliente(id) {
         .then(response => response.json())
         .then(data => {
             if (data.success) {
-                const cliente = data.data;
-                
-                document.getElementById('cliente_id').value = cliente.id;
-                document.getElementById('razon_social').value = cliente.razon_social;
-                document.getElementById('rfc').value = cliente.rfc;
-                document.getElementById('regimen_fiscal').value = cliente.regimen_fiscal || '';
-                document.getElementById('direccion').value = cliente.direccion || '';
-                document.getElementById('pais').value = cliente.pais;
-                document.getElementById('contacto_principal').value = cliente.contacto_principal || '';
-                document.getElementById('telefono').value = cliente.telefono || '';
-                document.getElementById('correo').value = cliente.correo || '';
-                document.getElementById('dias_credito').value = cliente.dias_credito;
-                document.getElementById('limite_credito').value = cliente.limite_credito;
-                document.getElementById('condiciones_pago').value = cliente.condiciones_pago || '';
-                document.getElementById('moneda').value = cliente.moneda;
-                document.getElementById('uso_cfdi').value = cliente.uso_cfdi || '';
-                document.getElementById('metodo_pago').value = cliente.metodo_pago || '';
-                document.getElementById('forma_pago').value = cliente.forma_pago || '';
-                document.getElementById('banco').value = cliente.banco || '';
-                document.getElementById('cuenta_bancaria').value = cliente.cuenta_bancaria || '';
-                document.getElementById('estatus').value = cliente.estatus;
-                document.getElementById('vendedor_asignado').value = cliente.vendedor_asignado || '';
-                
-                document.getElementById('modalClienteTitle').textContent = 'Editar Cliente';
-                ocultarErrores();
-                
-                const modal = new bootstrap.Modal(document.getElementById('modalCliente'));
-                modal.show();
+                crearYMostrarModal(data.data);
             } else {
                 mostrarError('Error al cargar el cliente');
             }
@@ -313,9 +495,22 @@ function guardarCliente() {
     .then(data => {
         btn.disabled = false;
         btn.innerHTML = '<i class="fas fa-save"></i> Guardar Cliente';
-        
+
         if (data.success) {
-            bootstrap.Modal.getInstance(document.getElementById('modalCliente')).hide();
+            const modalElement = document.getElementById('modalCliente');
+            const modalInstance = bootstrap.Modal.getInstance(modalElement);
+            if (modalInstance) {
+                modalInstance.hide();
+            }
+            // Limpiar modal y backdrops después de cerrar
+            setTimeout(() => {
+                if (modalElement) modalElement.remove();
+                document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+                document.body.classList.remove('modal-open');
+                document.body.style.overflow = '';
+                document.body.style.paddingRight = '';
+            }, 300);
+
             cargarClientes();
             mostrarExito(data.message);
         } else {
@@ -537,6 +732,12 @@ function mostrarDetalleModal(cliente) {
     if (existingModal) {
         existingModal.remove();
     }
+
+    // Limpiar cualquier backdrop huérfano
+    document.querySelectorAll('.modal-backdrop').forEach(backdrop => backdrop.remove());
+    document.body.classList.remove('modal-open');
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
 
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     const modal = new bootstrap.Modal(document.getElementById('modalDetalle'));

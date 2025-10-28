@@ -112,5 +112,4 @@ require_once __DIR__ . '/app/views/header.php';
     </div>
 </div>
 
-<?php require_once __DIR__ . '/app/views/modal_cliente.php'; ?>
 <?php require_once __DIR__ . '/app/views/footer.php'; ?>
