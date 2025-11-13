@@ -20,7 +20,7 @@ include __DIR__ . '/app/views/header.php';
         <span class="ml-2">Filtros de Búsqueda</span>
     </h5>
     <div class="row g-3">
-        <div class="col-md-4">
+        <div class="col-md-3">
             <label for="buscar" class="form-label">Buscar</label>
             <div class="relative">
                 <input type="text" class="form-control pl-10" id="buscar" placeholder="Número de pedido o cliente...">
@@ -28,6 +28,10 @@ include __DIR__ . '/app/views/header.php';
             </div>
         </div>
         <div class="col-md-3">
+            <label for="cliente_filtro" class="form-label">Cliente</label>
+            <input type="text" class="form-control" id="cliente_filtro" placeholder="Filtro de cliente..." readonly style="background-color: #f3f4f6;">
+        </div>
+        <div class="col-md-2">
             <label for="estatus" class="form-label">Estatus</label>
             <select class="form-select" id="estatus">
                 <option value="">Todos</option>
@@ -37,9 +41,15 @@ include __DIR__ . '/app/views/header.php';
                 <option value="cancelada">Cancelada</option>
             </select>
         </div>
-        <div class="col-md-1 d-flex align-items-end gap-2">
+        <div class="col-md-2 d-flex align-items-end gap-2">
             <button class="btn btn-primary w-100 group" id="btnBuscar" title="Buscar">
                 <i class="fas fa-search transition-transform group-hover:scale-125"></i>
+            </button>
+        </div>
+        <div class="col-md-2 d-flex align-items-end gap-2" id="btnLimpiarClienteContainer" style="display:none;">
+            <button class="btn btn-secondary w-100 group" id="btnLimpiarCliente" title="Limpiar filtro de cliente">
+                <i class="fas fa-times transition-transform group-hover:rotate-90"></i>
+                <span class="ml-1">Limpiar Cliente</span>
             </button>
         </div>
     </div>

@@ -126,6 +126,9 @@ function mostrarClientes(clientes) {
                     <button class="btn btn-sm btn-warning" onclick="editarCliente(${cliente.id})" title="Editar">
                         <i class="fas fa-edit"></i>
                     </button>
+                    <button class="btn btn-sm btn-primary" onclick="verPedidosCliente(${cliente.id}, '${escapeHtml(cliente.razon_social)}')" title="Ver pedidos del cliente">
+                        <i class="fas fa-file-invoice"></i>
+                    </button>
                     <button class="btn btn-sm btn-success" onclick="exportarPDF(${cliente.id})" title="Exportar PDF">
                         <i class="fas fa-file-pdf"></i>
                     </button>
@@ -797,4 +800,9 @@ function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
+}
+
+function verPedidosCliente(clienteId, clienteNombre) {
+    // Redirigir a la página de pedidos con el filtro de cliente
+    window.location.href = `${BASE_URL}/pedidos.php?cliente_id=${clienteId}&cliente_nombre=${encodeURIComponent(clienteNombre)}`;
 }

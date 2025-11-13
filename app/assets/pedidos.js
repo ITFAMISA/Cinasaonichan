@@ -5,8 +5,21 @@
     let paginaActual = 1;
     let ordenActual = 'fecha_creacion';
     let direccionActual = 'DESC';
+    let clienteIdFiltro = null;
+    let clienteNombreFiltro = null;
 
     document.addEventListener('DOMContentLoaded', function() {
+        // Detectar si viene un filtro de cliente desde la URL
+        const urlParams = new URLSearchParams(window.location.search);
+        clienteIdFiltro = urlParams.get('cliente_id');
+        clienteNombreFiltro = urlParams.get('cliente_nombre');
+
+        // Si hay un filtro de cliente, mostrar el campo
+        if (clienteIdFiltro && clienteNombreFiltro) {
+            document.getElementById('cliente_filtro').value = decodeURIComponent(clienteNombreFiltro);
+            document.getElementById('btnLimpiarClienteContainer').style.display = 'flex';
+        }
+
         cargarPedidos();
 
         // Event listeners principales
@@ -15,6 +28,18 @@
         });
         document.getElementById('btnBuscar').addEventListener('click', () => cargarPedidos(1));
         document.getElementById('btnLimpiarFiltros').addEventListener('click', limpiarFiltros);
+
+        // Event listener para limpiar filtro de cliente
+        const btnLimpiarCliente = document.getElementById('btnLimpiarCliente');
+        if (btnLimpiarCliente) {
+            btnLimpiarCliente.addEventListener('click', () => {
+                clienteIdFiltro = null;
+                clienteNombreFiltro = null;
+                document.getElementById('cliente_filtro').value = '';
+                document.getElementById('btnLimpiarClienteContainer').style.display = 'none';
+                cargarPedidos(1);
+            });
+        }
 
         // Ordenamiento
         document.querySelectorAll('.sortable').forEach(th => {
@@ -61,6 +86,11 @@
             direccion: direccionActual,
             pagina: pagina
         };
+
+        // Agregar filtro de cliente si está presente
+        if (clienteIdFiltro) {
+            filtros.cliente_id = clienteIdFiltro;
+        }
 
         const queryString = new URLSearchParams(filtros).toString();
         const tbody = document.getElementById('tablaPedidos');
@@ -224,6 +254,10 @@
     function limpiarFiltros() {
         document.getElementById('buscar').value = '';
         document.getElementById('estatus').value = '';
+        clienteIdFiltro = null;
+        clienteNombreFiltro = null;
+        document.getElementById('cliente_filtro').value = '';
+        document.getElementById('btnLimpiarClienteContainer').style.display = 'none';
         paginaActual = 1;
         cargarPedidos();
     }
