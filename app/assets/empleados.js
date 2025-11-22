@@ -130,6 +130,9 @@
                         <button class="btn btn-sm btn-info text-white" onclick="window.verDetalleEmpleado(${empleado.id})" title="Ver detalle">
                             <i class="fas fa-eye"></i>
                         </button>
+                        <button class="btn btn-sm btn-success text-white" onclick="window.abrirHabilidadesEmpleado(${empleado.id}, '${escapeHtml(empleado.nombre + ' ' + empleado.apellido)}')" title="Gestionar habilidades">
+                            <i class="fas fa-user-check"></i>
+                        </button>
                         <button class="btn btn-sm btn-warning" onclick="window.editarEmpleado(${empleado.id})" title="Editar">
                             <i class="fas fa-edit"></i>
                         </button>
@@ -242,12 +245,40 @@
 
                                 <div class="row mb-3">
                                     <div class="col-md-6">
+                                        <label for="numero_empleado" class="form-label">Número Empleado</label>
+                                        <input type="text" class="form-control" id="numero_empleado" name="numero_empleado">
+                                    </div>
+                                    <div class="col-md-6">
                                         <label for="puesto" class="form-label">Puesto <span class="text-danger">*</span></label>
                                         <input type="text" class="form-control" id="puesto" name="puesto" required>
                                     </div>
+                                </div>
+
+                                <div class="row mb-3">
                                     <div class="col-md-6">
-                                        <label for="numero_empleado" class="form-label">Número Empleado</label>
-                                        <input type="text" class="form-control" id="numero_empleado" name="numero_empleado">
+                                        <label for="departamento" class="form-label">Departamento</label>
+                                        <input type="text" class="form-control" id="departamento" name="departamento">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fecha_ingreso" class="form-label">Fecha Ingreso</label>
+                                        <input type="date" class="form-control" id="fecha_ingreso" name="fecha_ingreso">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="salario_base" class="form-label">Salario Base</label>
+                                        <input type="number" class="form-control" id="salario_base" name="salario_base" step="0.01">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="estatus_empleado" class="form-label">Estatus</label>
+                                        <select class="form-select" id="estatus_empleado" name="estatus_empleado">
+                                            <option value="activo">Activo</option>
+                                            <option value="inactivo">Inactivo</option>
+                                            <option value="licencia">Licencia</option>
+                                            <option value="suspendido">Suspendido</option>
+                                            <option value="jubilado">Jubilado</option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -257,39 +288,74 @@
                                 </div>
 
                                 <div class="row mb-3">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <label for="correo" class="form-label">Correo</label>
                                         <input type="email" class="form-control" id="correo" name="correo">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="telefono" class="form-label">Teléfono</label>
-                                        <input type="tel" class="form-control" id="telefono" name="telefono">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-md-6">
+                                        <label for="telefono" class="form-label">Teléfono</label>
+                                        <input type="tel" class="form-control" id="telefono" name="telefono">
+                                    </div>
+                                    <div class="col-md-6">
                                         <label for="telefono_extension" class="form-label">Extensión</label>
                                         <input type="text" class="form-control" id="telefono_extension" name="telefono_extension">
                                     </div>
-                                    <div class="col-md-6">
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
                                         <label for="direccion" class="form-label">Dirección</label>
                                         <input type="text" class="form-control" id="direccion" name="direccion">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <div class="col-md-4">
+                                    <div class="col-md-6">
                                         <label for="ciudad" class="form-label">Ciudad</label>
                                         <input type="text" class="form-control" id="ciudad" name="ciudad">
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="estado" class="form-label">Estado</label>
+                                    <div class="col-md-6">
+                                        <label for="estado" class="form-label">Estado/Provincia</label>
                                         <input type="text" class="form-control" id="estado" name="estado">
                                     </div>
-                                    <div class="col-md-4">
-                                        <label for="codigo_postal" class="form-label">CP</label>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="codigo_postal" class="form-label">Código Postal</label>
                                         <input type="text" class="form-control" id="codigo_postal" name="codigo_postal">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="pais" class="form-label">País</label>
+                                        <input type="text" class="form-control" id="pais" name="pais" value="México">
+                                    </div>
+                                </div>
+
+                                <!-- INFORMACIÓN LABORAL -->
+                                <div class="mb-3 mt-4">
+                                    <h6 class="text-primary fw-bold border-bottom pb-2">Información Laboral</h6>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-12">
+                                        <label for="tipo_contrato" class="form-label">Tipo de Contrato</label>
+                                        <input type="text" class="form-control" id="tipo_contrato" name="tipo_contrato" placeholder="Ej: Tiempo Indeterminado">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="fecha_contrato" class="form-label">Fecha Contrato</label>
+                                        <input type="date" class="form-control" id="fecha_contrato" name="fecha_contrato">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="supervisor_directo_id" class="form-label">Supervisor Directo</label>
+                                        <select class="form-select" id="supervisor_directo_id" name="supervisor_directo_id">
+                                            <option value="">Seleccionar</option>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -332,26 +398,37 @@
                                     </div>
                                 </div>
 
-                                <!-- IDENTIFICACIÓN -->
-                                <div class="mb-3 mt-4">
-                                    <h6 class="text-primary fw-bold border-bottom pb-2">Identificación</h6>
-                                </div>
-
                                 <div class="row mb-3">
                                     <div class="col-md-6">
-                                        <label for="tipo_identificacion" class="form-label">Tipo ID</label>
-                                        <input type="text" class="form-control" id="tipo_identificacion" name="tipo_identificacion" placeholder="RFC, INE, Pasaporte, etc.">
+                                        <label for="nivel_escolaridad" class="form-label">Nivel Escolaridad</label>
+                                        <input type="text" class="form-control" id="nivel_escolaridad" name="nivel_escolaridad" placeholder="Ej: Licenciatura, Maestría">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="numero_identificacion" class="form-label">Número</label>
-                                        <input type="text" class="form-control" id="numero_identificacion" name="numero_identificacion">
+                                        <label for="especialidad" class="form-label">Especialidad/Carrera</label>
+                                        <input type="text" class="form-control" id="especialidad" name="especialidad">
                                     </div>
+                                </div>
+
+                                <!-- CONTACTO DE EMERGENCIA -->
+                                <div class="mb-3 mt-4">
+                                    <h6 class="text-primary fw-bold border-bottom pb-2">Contacto de Emergencia</h6>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-md-12">
-                                        <label for="numero_seguro_social" class="form-label">Seguro Social</label>
-                                        <input type="text" class="form-control" id="numero_seguro_social" name="numero_seguro_social">
+                                        <label for="contacto_emergencia_nombre" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="contacto_emergencia_nombre" name="contacto_emergencia_nombre">
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <label for="contacto_emergencia_relacion" class="form-label">Relación</label>
+                                        <input type="text" class="form-control" id="contacto_emergencia_relacion" name="contacto_emergencia_relacion" placeholder="Ej: Cónyuge, Hijo, Padre">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="contacto_emergencia_telefono" class="form-label">Teléfono</label>
+                                        <input type="tel" class="form-control" id="contacto_emergencia_telefono" name="contacto_emergencia_telefono">
                                     </div>
                                 </div>
 
@@ -366,7 +443,7 @@
                                         <input type="text" class="form-control" id="banco" name="banco">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="cuenta_bancaria" class="form-label">Cuenta</label>
+                                        <label for="cuenta_bancaria" class="form-label">Cuenta Bancaria</label>
                                         <input type="text" class="form-control" id="cuenta_bancaria" name="cuenta_bancaria">
                                     </div>
                                 </div>
@@ -378,90 +455,26 @@
                                     </div>
                                 </div>
 
-                                <!-- INFORMACIÓN LABORAL -->
+                                <!-- IDENTIFICACIÓN -->
                                 <div class="mb-3 mt-4">
-                                    <h6 class="text-primary fw-bold border-bottom pb-2">Información Laboral</h6>
+                                    <h6 class="text-primary fw-bold border-bottom pb-2">Identificación</h6>
                                 </div>
 
                                 <div class="row mb-3">
                                     <div class="col-md-6">
-                                        <label for="departamento" class="form-label">Departamento</label>
-                                        <input type="text" class="form-control" id="departamento" name="departamento">
+                                        <label for="tipo_identificacion" class="form-label">Tipo</label>
+                                        <input type="text" class="form-control" id="tipo_identificacion" name="tipo_identificacion" placeholder="RFC, INE, Pasaporte, etc.">
                                     </div>
                                     <div class="col-md-6">
-                                        <label for="fecha_ingreso" class="form-label">Fecha Ingreso</label>
-                                        <input type="date" class="form-control" id="fecha_ingreso" name="fecha_ingreso">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <label for="salario_base" class="form-label">Salario Base</label>
-                                        <input type="number" class="form-control" id="salario_base" name="salario_base" step="0.01">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="tipo_contrato" class="form-label">Tipo Contrato</label>
-                                        <input type="text" class="form-control" id="tipo_contrato" name="tipo_contrato" placeholder="Ej: Tiempo Indeterminado">
+                                        <label for="numero_identificacion" class="form-label">Número</label>
+                                        <input type="text" class="form-control" id="numero_identificacion" name="numero_identificacion">
                                     </div>
                                 </div>
 
                                 <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <label for="fecha_contrato" class="form-label">Fecha Contrato</label>
-                                        <input type="date" class="form-control" id="fecha_contrato" name="fecha_contrato">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="supervisor_directo_id" class="form-label">Supervisor Directo</label>
-                                        <input type="number" class="form-control" id="supervisor_directo_id" name="supervisor_directo_id">
-                                    </div>
-                                </div>
-
-                                <!-- CONTACTO DE EMERGENCIA -->
-                                <div class="mb-3 mt-4">
-                                    <h6 class="text-primary fw-bold border-bottom pb-2">Contacto de Emergencia</h6>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <label for="contacto_emergencia_nombre" class="form-label">Nombre</label>
-                                        <input type="text" class="form-control" id="contacto_emergencia_nombre" name="contacto_emergencia_nombre">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="contacto_emergencia_relacion" class="form-label">Relación</label>
-                                        <input type="text" class="form-control" id="contacto_emergencia_relacion" name="contacto_emergencia_relacion" placeholder="Ej: Esposa, Padre, etc.">
-                                    </div>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <label for="contacto_emergencia_telefono" class="form-label">Teléfono</label>
-                                        <input type="tel" class="form-control" id="contacto_emergencia_telefono" name="contacto_emergencia_telefono">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="estatus_empleado" class="form-label">Estatus</label>
-                                        <select class="form-select" id="estatus_empleado" name="estatus_empleado">
-                                            <option value="activo">Activo</option>
-                                            <option value="inactivo">Inactivo</option>
-                                            <option value="licencia">Licencia</option>
-                                            <option value="suspendido">Suspendido</option>
-                                            <option value="jubilado">Jubilado</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <!-- EDUCACIÓN Y OTROS -->
-                                <div class="mb-3 mt-4">
-                                    <h6 class="text-primary fw-bold border-bottom pb-2">Educación y Otros</h6>
-                                </div>
-
-                                <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <label for="nivel_escolaridad" class="form-label">Nivel Escolaridad</label>
-                                        <input type="text" class="form-control" id="nivel_escolaridad" name="nivel_escolaridad">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="especialidad" class="form-label">Especialidad</label>
-                                        <input type="text" class="form-control" id="especialidad" name="especialidad">
+                                    <div class="col-md-12">
+                                        <label for="numero_seguro_social" class="form-label">Seguro Social</label>
+                                        <input type="text" class="form-control" id="numero_seguro_social" name="numero_seguro_social">
                                     </div>
                                 </div>
 
@@ -499,14 +512,48 @@
             guardarEmpleado(empleadoId);
         });
 
-        // Si es edición, cargar datos con un pequeño delay para asegurar que el DOM está listo
+        // Cargar supervisores disponibles
+        cargarSupervisoresDisponibles();
+
+        // Si es edición, cargar datos con delay para asegurar que el DOM está listo
         if (empleadoId) {
             setTimeout(() => {
                 cargarDatosEmpleado(empleadoId);
-            }, 100);
+            }, 300);
         }
 
         modal.show();
+    }
+
+    function cargarSupervisoresDisponibles() {
+        fetch(`${BASE_URL}/app/controllers/empleados_opciones.php?opcion=supervisores`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    const selectSupervisor = document.getElementById('supervisor_directo_id');
+                    if (selectSupervisor) {
+                        // Limpiar opciones previas excepto la primera
+                        selectSupervisor.innerHTML = '<option value="">Seleccionar</option>';
+
+                        // Obtener supervisores del objeto data
+                        const supervisores = data.data.supervisores || data.data;
+
+                        if (Array.isArray(supervisores)) {
+                            // Agregar supervisores
+                            supervisores.forEach(supervisor => {
+                                const option = document.createElement('option');
+                                option.value = supervisor.id;
+                                // El modelo devuelve nombre_completo, usar eso
+                                option.textContent = supervisor.nombre_completo || `${supervisor.nombre} ${supervisor.apellido}`;
+                                selectSupervisor.appendChild(option);
+                            });
+                        }
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error cargando supervisores:', error);
+            });
     }
 
     function cargarDatosEmpleado(id) {
@@ -515,57 +562,92 @@
             .then(data => {
                 if (data.success) {
                     const empleado = data.data;
+                    const form = document.getElementById('formEmpleado');
+
+                    if (!form) {
+                        mostrarError('Error: Formulario no encontrado');
+                        return;
+                    }
+
+                    // Obtener todos los inputs dentro del formulario
+                    const setFieldValue = (fieldId, value) => {
+                        const field = form.querySelector(`#${fieldId}`);
+                        if (field) {
+                            // Para campos select, buscar la opción con ese value
+                            if (field.tagName === 'SELECT') {
+                                // Primero limpiar la selección
+                                field.value = '';
+                                // Luego buscar y seleccionar la opción correcta
+                                const option = field.querySelector(`option[value="${value}"]`);
+                                if (option) {
+                                    field.value = value;
+                                } else if (value && value !== '') {
+                                    // Si no encuentra la opción exacta, intentar asignar directamente
+                                    field.value = value || '';
+                                }
+                            } else {
+                                field.value = value || '';
+                            }
+                        }
+                    };
+
                     // Información General
-                    document.getElementById('nombre').value = empleado.nombre || '';
-                    document.getElementById('apellido').value = empleado.apellido || '';
-                    document.getElementById('puesto').value = empleado.puesto || '';
-                    document.getElementById('numero_empleado').value = empleado.numero_empleado || '';
+                    setFieldValue('nombre', empleado.nombre);
+                    setFieldValue('apellido', empleado.apellido);
+                    setFieldValue('puesto', empleado.puesto);
+                    setFieldValue('numero_empleado', empleado.numero_empleado);
 
                     // Contacto
-                    document.getElementById('correo').value = empleado.correo || '';
-                    document.getElementById('telefono').value = empleado.telefono || '';
-                    document.getElementById('telefono_extension').value = empleado.telefono_extension || '';
-                    document.getElementById('direccion').value = empleado.direccion || '';
-                    document.getElementById('ciudad').value = empleado.ciudad || '';
-                    document.getElementById('estado').value = empleado.estado || '';
-                    document.getElementById('codigo_postal').value = empleado.codigo_postal || '';
+                    setFieldValue('correo', empleado.correo);
+                    setFieldValue('telefono', empleado.telefono);
+                    setFieldValue('telefono_extension', empleado.telefono_extension);
+                    setFieldValue('direccion', empleado.direccion);
+                    setFieldValue('ciudad', empleado.ciudad);
+                    setFieldValue('estado', empleado.estado);
+                    setFieldValue('codigo_postal', empleado.codigo_postal);
 
                     // Personal
-                    document.getElementById('fecha_nacimiento').value = empleado.fecha_nacimiento || '';
-                    document.getElementById('genero').value = empleado.genero || '';
-                    document.getElementById('estado_civil').value = empleado.estado_civil || '';
-                    document.getElementById('cantidad_dependientes').value = empleado.cantidad_dependientes || 0;
+                    setFieldValue('fecha_nacimiento', empleado.fecha_nacimiento);
+                    setFieldValue('genero', empleado.genero);
+                    setFieldValue('estado_civil', empleado.estado_civil);
+                    setFieldValue('cantidad_dependientes', empleado.cantidad_dependientes || 0);
 
                     // Identificación
-                    document.getElementById('tipo_identificacion').value = empleado.tipo_identificacion || '';
-                    document.getElementById('numero_identificacion').value = empleado.numero_identificacion || '';
-                    document.getElementById('numero_seguro_social').value = empleado.numero_seguro_social || '';
+                    setFieldValue('tipo_identificacion', empleado.tipo_identificacion);
+                    setFieldValue('numero_identificacion', empleado.numero_identificacion);
+                    setFieldValue('numero_seguro_social', empleado.numero_seguro_social);
 
                     // Bancaria
-                    document.getElementById('banco').value = empleado.banco || '';
-                    document.getElementById('cuenta_bancaria').value = empleado.cuenta_bancaria || '';
-                    document.getElementById('clabe').value = empleado.clabe || '';
+                    setFieldValue('banco', empleado.banco);
+                    setFieldValue('cuenta_bancaria', empleado.cuenta_bancaria);
+                    setFieldValue('clabe', empleado.clabe);
 
                     // Laboral
-                    document.getElementById('departamento').value = empleado.departamento || '';
-                    document.getElementById('fecha_ingreso').value = empleado.fecha_ingreso || '';
-                    document.getElementById('salario_base').value = empleado.salario_base || '';
-                    document.getElementById('tipo_contrato').value = empleado.tipo_contrato || '';
-                    document.getElementById('fecha_contrato').value = empleado.fecha_contrato || '';
-                    document.getElementById('supervisor_directo_id').value = empleado.supervisor_directo_id || '';
+                    setFieldValue('departamento', empleado.departamento);
+                    setFieldValue('fecha_ingreso', empleado.fecha_ingreso);
+                    setFieldValue('salario_base', empleado.salario_base);
+                    setFieldValue('tipo_contrato', empleado.tipo_contrato);
+                    setFieldValue('fecha_contrato', empleado.fecha_contrato);
+                    setFieldValue('supervisor_directo_id', empleado.supervisor_directo_id);
 
                     // Emergencia
-                    document.getElementById('contacto_emergencia_nombre').value = empleado.contacto_emergencia_nombre || '';
-                    document.getElementById('contacto_emergencia_relacion').value = empleado.contacto_emergencia_relacion || '';
-                    document.getElementById('contacto_emergencia_telefono').value = empleado.contacto_emergencia_telefono || '';
+                    setFieldValue('contacto_emergencia_nombre', empleado.contacto_emergencia_nombre);
+                    setFieldValue('contacto_emergencia_relacion', empleado.contacto_emergencia_relacion);
+                    setFieldValue('contacto_emergencia_telefono', empleado.contacto_emergencia_telefono);
 
                     // Educación
-                    document.getElementById('nivel_escolaridad').value = empleado.nivel_escolaridad || '';
-                    document.getElementById('especialidad').value = empleado.especialidad || '';
+                    setFieldValue('nivel_escolaridad', empleado.nivel_escolaridad);
+                    setFieldValue('especialidad', empleado.especialidad);
 
                     // Estatus y Observaciones
-                    document.getElementById('estatus_empleado').value = empleado.estatus_empleado || 'activo';
-                    document.getElementById('observaciones').value = empleado.observaciones || '';
+                    setFieldValue('estatus_empleado', empleado.estatus_empleado);
+                    setFieldValue('observaciones', empleado.observaciones);
+
+                    // Para campos con pais que tiene default value
+                    const paisField = form.querySelector('#pais');
+                    if (paisField && empleado.pais) {
+                        paisField.value = empleado.pais;
+                    }
                 } else {
                     mostrarError('Error al cargar los datos del empleado');
                 }
@@ -584,15 +666,26 @@
             return;
         }
 
-        const datos = new FormData(form);
+        // Obtener todos los inputs y selects del formulario incluyendo los vacíos
+        const datosJson = {};
+        const inputs = form.querySelectorAll('input, select, textarea');
+
+        inputs.forEach(input => {
+            if (input.name) {
+                datosJson[input.name] = input.value;
+            }
+        });
+
         const url = empleadoId
             ? `${BASE_URL}/app/controllers/empleados_editar.php?id=${empleadoId}`
             : `${BASE_URL}/app/controllers/empleados_crear.php`;
-        const metodo = empleadoId ? 'POST' : 'POST';
 
         fetch(url, {
-            method: metodo,
-            body: JSON.stringify(Object.fromEntries(datos))
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(datosJson)
         })
         .then(response => response.json())
         .then(data => {
@@ -675,6 +768,264 @@
                 console.error('Error:', error);
                 mostrarError('Error de conexión al eliminar');
             });
+        }
+    }
+
+    // ============================================================
+    // GESTIÓN DE HABILIDADES
+    // ============================================================
+    let procesosDisponibles = [];
+    let habilidadesActuales = {};
+    let empleadoSeleccionado = null;
+
+    document.getElementById('btnHabilidades').addEventListener('click', () => abrirModalHabilidades());
+
+    window.abrirHabilidadesEmpleado = function(empleadoId, empleadoNombre) {
+        abrirModalHabilidades(empleadoId, empleadoNombre);
+    };
+
+    async function abrirModalHabilidades(empleadoIdPreseleccionado = null, nombreEmpleado = null) {
+        try {
+            // Cargar datos necesarios
+            const [empleadosResp, procesosResp, habilidadesResp] = await Promise.all([
+                fetch(`${BASE_URL}/app/controllers/empleados_listar.php?limite=1000`),
+                fetch(`${BASE_URL}/app/controllers/procesos_obtener_todos.php`),
+                fetch(`${BASE_URL}/app/controllers/empleado_procesos_listar.php`)
+            ]);
+
+            const empleadosData = await empleadosResp.json();
+            const procesosData = await procesosResp.json();
+            const habilidadesData = await habilidadesResp.json();
+
+            if (!empleadosData.success || !procesosData.success || !habilidadesData.success) {
+                mostrarError('Error al cargar datos del modal');
+                return;
+            }
+
+            // Guardar procesos disponibles
+            procesosDisponibles = procesosData.data;
+
+            // Guardar habilidades existentes
+            habilidadesActuales = {};
+            habilidadesData.data.forEach(emp => {
+                habilidadesActuales[emp.id] = {
+                    nombres: emp.proceso_nombres || [],
+                    ids: emp.proceso_ids || []
+                };
+            });
+
+            // Generar opciones de empleados
+            const opcionesEmpleados = empleadosData.data.map(emp =>
+                `<option value="${emp.id}">${emp.apellido}, ${emp.nombre}</option>`
+            ).join('');
+
+            // Generar checkboxes de procesos
+            const procesosCheckboxes = procesosData.data.map(proceso =>
+                `<label class="form-check d-flex align-items-center p-2 border rounded" style="cursor: pointer;">
+                    <input type="checkbox" class="form-check-input me-2" value="${proceso.id}" data-proceso-id="${proceso.id}">
+                    <span class="form-check-label">${proceso.nombre}</span>
+                </label>`
+            ).join('');
+
+            // Construir HTML del modal
+            const modalHTML = `
+                <div class="modal fade" id="modalHabilidades" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+                                <h5 class="modal-title">
+                                    <i class="fas fa-user-check me-2"></i>Gestión de Habilidades
+                                </h5>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="selectEmpleado" class="form-label">Seleccionar Empleado</label>
+                                    <select class="form-select" id="selectEmpleado">
+                                        <option value="">-- Seleccionar un empleado --</option>
+                                        ${opcionesEmpleados}
+                                    </select>
+                                </div>
+
+                                <div id="procesosList" class="mt-4 d-none">
+                                    <h6>Procesos Disponibles</h6>
+                                    <div id="procesosCheckboxes" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px;">
+                                        ${procesosCheckboxes}
+                                    </div>
+                                </div>
+
+                                <div id="habilidadesActuales" class="mt-4 p-3 bg-light rounded d-none">
+                                    <h6>Habilidades Asignadas</h6>
+                                    <div id="badgesHabilidades"></div>
+                                </div>
+
+                                <div id="mensajeEstado" class="alert mt-3 d-none" role="alert"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                <button type="button" class="btn btn-primary" id="btnGuardarHabilidades">
+                                    <i class="fas fa-save me-2"></i>Guardar Cambios
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Remover modal existente si lo hay
+            const existingModal = document.getElementById('modalHabilidades');
+            if (existingModal) {
+                const bootstrapModal = bootstrap.Modal.getInstance(existingModal);
+                if (bootstrapModal) {
+                    bootstrapModal.hide();
+                }
+                existingModal.remove();
+            }
+
+            // Insertar modal en el DOM
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+            // Agregar event listeners
+            document.getElementById('selectEmpleado').addEventListener('change', function() {
+                empleadoSeleccionado = this.value;
+                if (empleadoSeleccionado) {
+                    cargarHabilidadesEmpleado(empleadoSeleccionado);
+                    document.getElementById('procesosList').classList.remove('d-none');
+                    document.getElementById('habilidadesActuales').classList.remove('d-none');
+                } else {
+                    limpiarFormularioHabilidades();
+                    document.getElementById('procesosList').classList.add('d-none');
+                    document.getElementById('habilidadesActuales').classList.add('d-none');
+                }
+            });
+
+            document.getElementById('btnGuardarHabilidades').addEventListener('click', guardarHabilidades);
+
+            // Si hay un empleado preseleccionado, establecerlo
+            if (empleadoIdPreseleccionado) {
+                const selectEmpleado = document.getElementById('selectEmpleado');
+                selectEmpleado.value = empleadoIdPreseleccionado;
+
+                // Disparar el evento change para cargar las habilidades
+                empleadoSeleccionado = empleadoIdPreseleccionado;
+                cargarHabilidadesEmpleado(empleadoIdPreseleccionado);
+                document.getElementById('procesosList').classList.remove('d-none');
+                document.getElementById('habilidadesActuales').classList.remove('d-none');
+            }
+
+            // Mostrar modal
+            const modal = new bootstrap.Modal(document.getElementById('modalHabilidades'));
+            modal.show();
+
+        } catch (error) {
+            console.error('Error:', error);
+            mostrarError('Error al abrir el modal de habilidades');
+        }
+    }
+
+    function cargarHabilidadesEmpleado(empleadoId) {
+        // Limpiar todos los checkboxes
+        document.querySelectorAll('#procesosCheckboxes input[type="checkbox"]').forEach(cb => {
+            cb.checked = false;
+        });
+
+        // Marcar las habilidades del empleado
+        if (habilidadesActuales[empleadoId] && habilidadesActuales[empleadoId].ids) {
+            habilidadesActuales[empleadoId].ids.forEach(procesoId => {
+                const checkbox = document.querySelector(`#procesosCheckboxes input[data-proceso-id="${procesoId}"]`);
+                if (checkbox) {
+                    checkbox.checked = true;
+                }
+            });
+        }
+
+        // Actualizar badges de habilidades actuales
+        const container = document.getElementById('badgesHabilidades');
+        if (habilidadesActuales[empleadoId] && habilidadesActuales[empleadoId].nombres.length > 0) {
+            container.innerHTML = habilidadesActuales[empleadoId].nombres
+                .map(nombre => `<span class="badge bg-success me-2 mb-2">${nombre}</span>`)
+                .join('');
+        } else {
+            container.innerHTML = '<p class="text-muted">Sin habilidades asignadas</p>';
+        }
+    }
+
+    function limpiarFormularioHabilidades() {
+        document.querySelectorAll('#procesosCheckboxes input[type="checkbox"]').forEach(cb => {
+            cb.checked = false;
+        });
+        document.getElementById('badgesHabilidades').innerHTML = '';
+    }
+
+    async function guardarHabilidades() {
+        if (!empleadoSeleccionado) {
+            mostrarError('Por favor selecciona un empleado');
+            return;
+        }
+
+        try {
+            const checkboxes = document.querySelectorAll('#procesosCheckboxes input[type="checkbox"]');
+            const procesosSeleccionados = Array.from(checkboxes)
+                .filter(cb => cb.checked)
+                .map(cb => parseInt(cb.value));
+
+            // Obtener procesos anteriores
+            const procesosAnteriores = habilidadesActuales[empleadoSeleccionado]?.ids || [];
+
+            // Procesos a agregar
+            const procesosAgregar = procesosSeleccionados.filter(id => !procesosAnteriores.includes(id));
+
+            // Procesos a remover
+            const procesosRemover = procesosAnteriores.filter(id => !procesosSeleccionados.includes(id));
+
+            // Realizar operaciones
+            const promesas = [];
+
+            procesosAgregar.forEach(procesoId => {
+                promesas.push(
+                    fetch(`${BASE_URL}/app/controllers/empleado_procesos_actualizar.php`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams({
+                            empleado_id: empleadoSeleccionado,
+                            proceso_id: procesoId,
+                            accion: 'asignar',
+                            nivel: 'intermedio'
+                        })
+                    })
+                );
+            });
+
+            procesosRemover.forEach(procesoId => {
+                promesas.push(
+                    fetch(`${BASE_URL}/app/controllers/empleado_procesos_actualizar.php`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        body: new URLSearchParams({
+                            empleado_id: empleadoSeleccionado,
+                            proceso_id: procesoId,
+                            accion: 'desasignar'
+                        })
+                    })
+                );
+            });
+
+            if (promesas.length > 0) {
+                await Promise.all(promesas);
+            }
+
+            // Cerrar modal y mostrar éxito
+            const modal = bootstrap.Modal.getInstance(document.getElementById('modalHabilidades'));
+            modal.hide();
+            mostrarExito('Habilidades guardadas correctamente');
+
+        } catch (error) {
+            console.error('Error:', error);
+            mostrarError('Error al guardar las habilidades');
         }
     }
 

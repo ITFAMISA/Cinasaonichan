@@ -166,7 +166,7 @@ include __DIR__ . '/app/views/header.php';
         <!-- Información Personal -->
         <div class="col-md-6 mb-4">
             <div class="card">
-                <div class="card-header bg-warning text-dark">
+                <div class="card-header bg-warning text-white">
                     <i class="fas fa-id-card"></i> Información Personal
                 </div>
                 <div class="card-body">

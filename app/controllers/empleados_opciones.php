@@ -8,6 +8,19 @@ header('Content-Type: application/json');
 $model = new EmpleadosModel($pdo);
 
 try {
+    // Si hay parámetro buscar, buscar empleados
+    if (isset($_GET['buscar'])) {
+        $buscar = trim($_GET['buscar']);
+        $empleados = $model->buscarEmpleados($buscar);
+        
+        echo json_encode([
+            'success' => true,
+            'data' => $empleados
+        ]);
+        exit;
+    }
+    
+    // Si no hay búsqueda, devolver opciones (departamentos, puestos, etc.)
     $opcion = isset($_GET['opcion']) ? trim($_GET['opcion']) : 'todas';
 
     $respuesta = [

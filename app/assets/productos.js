@@ -16,7 +16,7 @@
         document.getElementById('btnNuevoProducto').addEventListener('click', abrirModalCrear);
         document.getElementById('btnBuscar').addEventListener('click', () => cargarProductos(1));
         document.getElementById('btnLimpiarFiltros').addEventListener('click', limpiarFiltros);
-        document.getElementById('btnGuardarProducto').addEventListener('click', guardarProducto);
+        // btnGuardarProducto se crea dinámicamente, su listener se agrega en crearYMostrarModal()
 
         const buscarInput = document.getElementById('buscar');
         if (buscarInput) {
@@ -138,6 +138,9 @@ function mostrarProductos(productos) {
                     </button>
                     <button class="btn btn-sm btn-warning" onclick="window.editarProducto(${producto.id})" title="Editar">
                         <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-sm btn-info text-white" onclick="window.abrirModalAsignarProcesos(${producto.id})" title="Asignar procesos">
+                        <i class="fas fa-sitemap"></i>
                     </button>
                     <button class="btn btn-sm btn-success" onclick="window.exportarProductoPDF(${producto.id})" title="Exportar PDF">
                         <i class="fas fa-file-pdf"></i>

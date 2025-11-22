@@ -291,6 +291,96 @@ class EmpleadosModel {
             $params[] = !empty($datos['cuenta_bancaria']) ? trim($datos['cuenta_bancaria']) : null;
         }
 
+        if (isset($datos['clabe'])) {
+            $actualizaciones[] = "clabe = ?";
+            $params[] = !empty($datos['clabe']) ? trim($datos['clabe']) : null;
+        }
+
+        if (isset($datos['direccion'])) {
+            $actualizaciones[] = "direccion = ?";
+            $params[] = !empty($datos['direccion']) ? trim($datos['direccion']) : null;
+        }
+
+        if (isset($datos['ciudad'])) {
+            $actualizaciones[] = "ciudad = ?";
+            $params[] = !empty($datos['ciudad']) ? trim($datos['ciudad']) : null;
+        }
+
+        if (isset($datos['estado'])) {
+            $actualizaciones[] = "estado = ?";
+            $params[] = !empty($datos['estado']) ? trim($datos['estado']) : null;
+        }
+
+        if (isset($datos['codigo_postal'])) {
+            $actualizaciones[] = "codigo_postal = ?";
+            $params[] = !empty($datos['codigo_postal']) ? trim($datos['codigo_postal']) : null;
+        }
+
+        if (isset($datos['pais'])) {
+            $actualizaciones[] = "pais = ?";
+            $params[] = !empty($datos['pais']) ? trim($datos['pais']) : 'México';
+        }
+
+        if (isset($datos['estado_civil'])) {
+            $actualizaciones[] = "estado_civil = ?";
+            $params[] = !empty($datos['estado_civil']) ? $datos['estado_civil'] : null;
+        }
+
+        if (isset($datos['cantidad_dependientes'])) {
+            $actualizaciones[] = "cantidad_dependientes = ?";
+            $params[] = !empty($datos['cantidad_dependientes']) ? (int)$datos['cantidad_dependientes'] : 0;
+        }
+
+        if (isset($datos['tipo_identificacion'])) {
+            $actualizaciones[] = "tipo_identificacion = ?";
+            $params[] = !empty($datos['tipo_identificacion']) ? trim($datos['tipo_identificacion']) : null;
+        }
+
+        if (isset($datos['numero_identificacion'])) {
+            $actualizaciones[] = "numero_identificacion = ?";
+            $params[] = !empty($datos['numero_identificacion']) ? trim($datos['numero_identificacion']) : null;
+        }
+
+        if (isset($datos['numero_seguro_social'])) {
+            $actualizaciones[] = "numero_seguro_social = ?";
+            $params[] = !empty($datos['numero_seguro_social']) ? trim($datos['numero_seguro_social']) : null;
+        }
+
+        if (isset($datos['tipo_contrato'])) {
+            $actualizaciones[] = "tipo_contrato = ?";
+            $params[] = !empty($datos['tipo_contrato']) ? trim($datos['tipo_contrato']) : null;
+        }
+
+        if (isset($datos['fecha_contrato'])) {
+            $actualizaciones[] = "fecha_contrato = ?";
+            $params[] = !empty($datos['fecha_contrato']) ? $datos['fecha_contrato'] : null;
+        }
+
+        if (isset($datos['contacto_emergencia_nombre'])) {
+            $actualizaciones[] = "contacto_emergencia_nombre = ?";
+            $params[] = !empty($datos['contacto_emergencia_nombre']) ? trim($datos['contacto_emergencia_nombre']) : null;
+        }
+
+        if (isset($datos['contacto_emergencia_relacion'])) {
+            $actualizaciones[] = "contacto_emergencia_relacion = ?";
+            $params[] = !empty($datos['contacto_emergencia_relacion']) ? trim($datos['contacto_emergencia_relacion']) : null;
+        }
+
+        if (isset($datos['contacto_emergencia_telefono'])) {
+            $actualizaciones[] = "contacto_emergencia_telefono = ?";
+            $params[] = !empty($datos['contacto_emergencia_telefono']) ? trim($datos['contacto_emergencia_telefono']) : null;
+        }
+
+        if (isset($datos['nivel_escolaridad'])) {
+            $actualizaciones[] = "nivel_escolaridad = ?";
+            $params[] = !empty($datos['nivel_escolaridad']) ? trim($datos['nivel_escolaridad']) : null;
+        }
+
+        if (isset($datos['especialidad'])) {
+            $actualizaciones[] = "especialidad = ?";
+            $params[] = !empty($datos['especialidad']) ? trim($datos['especialidad']) : null;
+        }
+
         $params[] = $id;
 
         $sql = "UPDATE empleados SET " . implode(", ", $actualizaciones) . " WHERE id = ?";
@@ -364,6 +454,30 @@ class EmpleadosModel {
                 WHERE estatus_empleado = 'activo' ORDER BY apellido, nombre";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    /**
+     * Buscar empleados por nombre, apellido o correo
+     */
+    public function buscarEmpleados($buscar = '') {
+        $sql = "SELECT id, nombre, apellido, correo, puesto, departamento, estatus_empleado 
+                FROM empleados 
+                WHERE estatus_empleado = 'activo'";
+        
+        $params = [];
+        
+        if (!empty($buscar)) {
+            $sql .= " AND (nombre LIKE ? OR apellido LIKE ? OR correo LIKE ? OR numero_empleado LIKE ?)";
+            $buscar_param = "%{$buscar}%";
+            $params = [$buscar_param, $buscar_param, $buscar_param, $buscar_param];
+        }
+        
+        $sql .= " ORDER BY apellido, nombre LIMIT 50";
+        
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute($params);
 
         return $stmt->fetchAll();
     }

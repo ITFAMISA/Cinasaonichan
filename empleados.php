@@ -84,6 +84,10 @@ include __DIR__ . '/app/views/header.php';
             <i class="fas fa-users mr-2"></i> Gestión de Empleados
         </span>
         <div class="flex gap-2">
+            <button class="btn btn-info btn-sm group" id="btnHabilidades">
+                <i class="fas fa-user-check transition-transform group-hover:scale-110"></i>
+                <span class="ml-1">Habilidades</span>
+            </button>
             <button class="btn btn-primary btn-sm group" id="btnNuevoEmpleado">
                 <i class="fas fa-plus transition-transform group-hover:rotate-90"></i>
                 <span class="ml-1">Nuevo Empleado</span>

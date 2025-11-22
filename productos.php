@@ -136,5 +136,6 @@ include __DIR__ . '/app/views/header.php';
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo BASE_PATH; ?>/app/assets/productos.js?v=<?php echo time(); ?>"></script>
+    <script src="<?php echo BASE_PATH; ?>/app/assets/producto_procesos.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>
