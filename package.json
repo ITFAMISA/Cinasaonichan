@@ -1,0 +1,25 @@
+{
+  "name": "cinasa-sistema",
+  "version": "2.0.0",
+  "description": "Sistema de gesti\u00f3n Cinasa - Redise\u00f1o UI corporativo",
+  "main": "index.php",
+  "scripts": {
+    "dev": "tailwindcss -i ./app/assets/input.css -o ./app/assets/dist/output.css --watch",
+    "build": "tailwindcss -i ./app/assets/input.css -o ./app/assets/dist/output.css --minify",
+    "build:css": "npm run build"
+  },
+  "keywords": [
+    "php",
+    "tailwindcss",
+    "sistema",
+    "gestion"
+  ],
+  "author": "Cinasa",
+  "license": "MIT",
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.4.0"
+  }
+}

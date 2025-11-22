@@ -6,34 +6,18 @@
     <title><?php echo $pageTitle ?? 'Catálogo de Clientes'; ?></title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="<?php echo BASE_PATH; ?>/app/assets/img/logo.png">
-    <!-- Tailwind CDN - Solo para desarrollo, usar build para producción -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts - Inter y Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6.4 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap 5.3 (solo para componentes JavaScript) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- TailwindCSS + Componentes Compilados -->
+    <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/app/assets/dist/output.css?v=<?php echo time(); ?>">
+    <!-- Estilos legacy (mantener temporalmente para compatibilidad) -->
     <link rel="stylesheet" href="<?php echo BASE_PATH; ?>/app/assets/style.css?v=<?php echo time(); ?>">
-    <script>
-        // Suprimir warning de Tailwind CDN en consola
-        if (typeof console !== 'undefined') {
-            const originalWarn = console.warn;
-            console.warn = function(...args) {
-                if (args[0] && args[0].includes && args[0].includes('cdn.tailwindcss.com should not be used in production')) {
-                    return;
-                }
-                originalWarn.apply(console, args);
-            };
-        }
-        
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#2563eb',
-                        secondary: '#64748b',
-                    }
-                }
-            }
-        }
-    </script>
     <script>
         // Base URL para las peticiones AJAX - DEBUG
         const BASE_URL = '<?php echo BASE_PATH; ?>';
