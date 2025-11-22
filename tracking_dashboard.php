@@ -53,47 +53,70 @@ if (!$mensajeInstalacion) {
 include __DIR__ . '/app/views/header.php';
 ?>
 
-<!-- Estilos específicos para el dashboard de tracking -->
+<!-- Estilos específicos para el dashboard de tracking - REDISEÑO PREMIUM CORPORATIVO -->
 <style>
-    /* Estructura principal de 3 columnas */
+    /* Estructura principal de 3 columnas - MEJORADA */
     .tracking-container {
         display: flex;
         height: calc(100vh - 220px);
         overflow: hidden;
-        gap: 15px;
-        padding: 15px;
+        gap: 24px;
+        padding: 24px;
     }
 
-    /* Panel lateral izquierdo - Lista de empleados */
+    /* Panel lateral izquierdo - Lista de empleados - REDISEÑADO */
     .panel-empleados {
-        width: 280px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        width: 320px;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        border: 1px solid rgba(148, 163, 184, 0.15);
+        backdrop-filter: blur(10px);
     }
 
     .panel-header {
-        padding: 15px;
-        background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+        padding: 20px 24px;
+        background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
         color: white;
-        font-weight: bold;
+        font-weight: 700;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .panel-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.6s;
+    }
+
+    .panel-header:hover::before {
+        left: 100%;
     }
 
     .panel-header h4 {
         margin: 0;
-        font-size: 16px;
+        font-size: 17px;
         display: flex;
         align-items: center;
+        letter-spacing: 0.3px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     }
 
     .panel-header h4 i {
-        margin-right: 8px;
+        margin-right: 10px;
+        font-size: 18px;
     }
 
     .panel-content {
@@ -103,57 +126,89 @@ include __DIR__ . '/app/views/header.php';
     }
 
     .panel-search {
-        padding: 10px;
-        border-bottom: 1px solid #eaeaea;
+        padding: 16px;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+        background: linear-gradient(to bottom, #f8fafc, #ffffff);
     }
 
     .panel-search .input-group {
-        box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        overflow: hidden;
     }
 
-    /* Panel central - Layout de tracking */
+    /* Panel central - Layout de tracking - REDISEÑADO */
     .panel-layout {
         flex: 1;
-        background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%) !important;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        background: linear-gradient(145deg, #f1f5f9 0%, #e2e8f0 50%, #f1f5f9 100%) !important;
+        border-radius: 20px;
+        box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.06), 0 8px 32px rgba(0, 0, 0, 0.1);
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        padding: 20px !important;
+        padding: 28px !important;
+        border: 1px solid rgba(148, 163, 184, 0.15);
     }
 
-    /* Panel lateral derecho - Pedidos y horas */
+    /* Panel lateral derecho - Pedidos y horas - REDISEÑADO */
     .panel-pedidos {
-        width: 280px;
-        background-color: #fff;
-        border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        width: 320px;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.08);
         display: flex;
         flex-direction: column;
         overflow: hidden;
+        border: 1px solid rgba(148, 163, 184, 0.15);
+        backdrop-filter: blur(10px);
     }
 
-    /* Tabs dentro del panel derecho */
+    /* Tabs dentro del panel derecho - REDISEÑADO */
     .tabs-container {
         display: flex;
-        border-bottom: 1px solid #eaeaea;
+        border-bottom: 2px solid rgba(226, 232, 240, 0.6);
+        background: linear-gradient(to bottom, #f8fafc, #ffffff);
     }
 
     .tab {
         flex: 1;
         text-align: center;
-        padding: 10px;
+        padding: 14px 16px;
         cursor: pointer;
-        font-weight: bold;
-        background-color: #f8f9fa;
-        transition: all 0.2s;
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        background: transparent;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        color: #64748b;
+        position: relative;
+    }
+
+    .tab::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%) scaleX(0);
+        width: 80%;
+        height: 3px;
+        background: linear-gradient(90deg, #2563eb, #3b82f6);
+        border-radius: 4px 4px 0 0;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .tab:hover {
+        color: #2563eb;
+        background: linear-gradient(to bottom, transparent, rgba(37, 99, 235, 0.05));
     }
 
     .tab.active {
-        background-color: #fff;
-        border-bottom: 3px solid #3498db;
-        color: #3498db;
+        background: linear-gradient(to bottom, transparent, rgba(37, 99, 235, 0.08));
+        color: #2563eb;
+    }
+
+    .tab.active::after {
+        transform: translateX(-50%) scaleX(1);
     }
 
     .tab-content {
@@ -167,35 +222,65 @@ include __DIR__ . '/app/views/header.php';
         display: block;
     }
 
-    /* Lista de empleados */
+    /* Lista de empleados - REDISEÑADA */
     .empleado-item {
-        padding: 10px 15px;
-        border-bottom: 1px solid #eaeaea;
+        padding: 14px 18px;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.5);
         cursor: pointer;
-        transition: all 0.2s;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
         align-items: center;
+        position: relative;
+    }
+
+    .empleado-item::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background: linear-gradient(180deg, #2563eb, #3b82f6);
+        transform: scaleY(0);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .empleado-item:hover {
-        background-color: #f8f9fa;
+        background: linear-gradient(90deg, rgba(37, 99, 235, 0.08), transparent);
+        transform: translateX(4px);
+    }
+
+    .empleado-item:hover::before {
+        transform: scaleY(1);
     }
 
     .empleado-item.selected {
-        background-color: #e1f0fa;
+        background: linear-gradient(90deg, rgba(37, 99, 235, 0.12), rgba(37, 99, 235, 0.05));
+    }
+
+    .empleado-item.selected::before {
+        transform: scaleY(1);
     }
 
     .empleado-avatar {
-        width: 32px;
-        height: 32px;
-        background-color: #3498db;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
         border-radius: 50%;
         color: white;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-weight: bold;
-        margin-right: 10px;
+        font-weight: 700;
+        font-size: 15px;
+        margin-right: 12px;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .empleado-item:hover .empleado-avatar {
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
     }
 
     .empleado-info {
@@ -203,13 +288,16 @@ include __DIR__ . '/app/views/header.php';
     }
 
     .empleado-nombre {
-        font-weight: 500;
-        margin-bottom: 2px;
+        font-weight: 600;
+        margin-bottom: 3px;
+        color: #1e293b;
+        font-size: 13.5px;
     }
 
     .empleado-puesto {
-        font-size: 11px;
-        color: #777;
+        font-size: 11.5px;
+        color: #64748b;
+        font-weight: 500;
     }
 
     .empleado-acciones {
@@ -245,35 +333,52 @@ include __DIR__ . '/app/views/header.php';
         text-overflow: ellipsis;
     }
 
-    /* Filtros de tipo de trabajo */
+    /* Filtros de tipo de trabajo - REDISEÑADO */
     .filtros-tipos {
-        padding: 10px;
+        padding: 16px 20px;
         display: flex;
         flex-wrap: wrap;
-        gap: 5px;
-        background-color: #f8f9fa;
-        border-bottom: 1px solid #eaeaea;
+        gap: 10px;
+        background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+        border-bottom: 2px solid rgba(226, 232, 240, 0.6);
+        box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.05);
     }
 
     .filtro-tipo {
-        padding: 4px 8px;
-        border-radius: 4px;
-        background-color: #e1e1e1;
-        font-size: 11px;
+        padding: 6px 12px;
+        border-radius: 10px;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        font-size: 11.5px;
+        font-weight: 600;
         display: flex;
         align-items: center;
         cursor: pointer;
+        border: 2px solid rgba(148, 163, 184, 0.2);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        color: #334155;
+        letter-spacing: 0.3px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .filtro-tipo:hover {
+        background: linear-gradient(145deg, #eff6ff 0%, #dbeafe 100%);
+        border-color: rgba(37, 99, 235, 0.4);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .filtro-tipo input[type="checkbox"] {
-        margin-right: 5px;
+        margin-right: 8px;
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
     }
 
-    /* Layout central - Grid de 3 columnas como dashboard_taller */
+    /* Layout central - Grid de 3 columnas - PREMIUM REDESIGN */
     .tracking-areas {
         display: grid !important;
         grid-template-columns: repeat(3, 1fr) !important;
-        gap: 20px !important;
+        gap: 28px !important;
         overflow: auto !important;
         width: 100% !important;
         height: 100% !important;
@@ -282,50 +387,88 @@ include __DIR__ . '/app/views/header.php';
     }
 
     .tracking-area {
-        background-color: white !important;
-        border-radius: 12px !important;
-        border: 4px solid #2c3e50 !important;
-        border-top: 8px solid #3498db !important;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
+        border-radius: 20px !important;
+        border: 2px solid rgba(148, 163, 184, 0.2) !important;
         overflow: hidden !important;
         display: flex !important;
         flex-direction: column !important;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.12) !important;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08) !important;
         height: auto !important;
         min-height: 650px !important;
+        position: relative !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
 
-    .tracking-area[data-id="2"] {
-        border-top-color: #2ecc71 !important;
+    .tracking-area::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+        box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
     }
 
-    .tracking-area[data-id="3"] {
-        border-top-color: #f39c12 !important;
+    .tracking-area[data-id="2"]::before {
+        background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+        box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+    }
+
+    .tracking-area[data-id="3"]::before {
+        background: linear-gradient(90deg, #f59e0b 0%, #fbbf24 100%);
+        box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4);
+    }
+
+    .tracking-area:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(0, 0, 0, 0.1) !important;
     }
 
     .area-header {
-        padding: 15px;
-        font-weight: bold;
-        font-size: 16px;
-        border-bottom: 2px solid #ddd;
-        color: #2c3e50;
+        padding: 20px 24px;
+        font-weight: 700;
+        font-size: 17px;
+        letter-spacing: 0.5px;
+        border-bottom: 2px solid rgba(226, 232, 240, 0.6);
+        color: #1e293b;
+        background: linear-gradient(to bottom, #f8fafc, #ffffff);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 8px;
+    }
+
+    .area-header i {
+        font-size: 20px;
+        color: #2563eb;
+    }
+
+    .tracking-area[data-id="2"] .area-header i {
+        color: #10b981;
+    }
+
+    .tracking-area[data-id="3"] .area-header i {
+        color: #f59e0b;
     }
 
     .area-content {
-        padding: 15px;
+        padding: 20px;
         flex: 1;
         overflow-y: auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        gap: 16px;
         align-content: flex-start;
     }
 
-    /* Estación / Máquina */
+    /* Estación / Máquina - PREMIUM CORPORATE REDESIGN */
     .estacion-item {
-        border: 2px solid #bdc3c7 !important;
-        border-radius: 8px !important;
+        border: 2px solid rgba(148, 163, 184, 0.25) !important;
+        border-radius: 16px !important;
         cursor: pointer !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
         display: flex !important;
         flex-direction: column !important;
         justify-content: center !important;
@@ -333,16 +476,17 @@ include __DIR__ . '/app/views/header.php';
         text-align: center !important;
         font-weight: 600 !important;
         font-size: 12px !important;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.07) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.04) !important;
         user-select: none !important;
         height: 220px !important;
         width: 100% !important;
-        padding: 12px !important;
-        background: white !important;
+        padding: 0 !important;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%) !important;
         position: relative !important;
         overflow: hidden !important;
-        gap: 5px !important;
+        gap: 0 !important;
         margin: 0 !important;
+        backdrop-filter: blur(8px) !important;
     }
 
     .estacion-item::before {
@@ -351,60 +495,89 @@ include __DIR__ . '/app/views/header.php';
         top: 0;
         left: 0;
         right: 0;
-        height: 6px;
-        background: var(--color-estacion, #34495e);
+        height: 52px;
+        background: linear-gradient(135deg, var(--color-estacion, #334155) 0%, color-mix(in srgb, var(--color-estacion, #334155) 80%, white) 100%);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .estacion-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--color-estacion, #334155), transparent);
+        opacity: 0;
+        transition: opacity 0.3s;
     }
 
     .estacion-item:hover {
-        transform: translateY(-6px) scale(1.02);
-        box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-        border-color: #34495e;
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.12) !important;
+        border-color: var(--color-estacion, #334155);
         z-index: 100;
     }
 
+    .estacion-item:hover::after {
+        opacity: 1;
+    }
+
     .estacion-nombre {
-        font-weight: 700 !important;
-        font-size: 14px !important;
+        font-weight: 800 !important;
+        font-size: 15px !important;
         margin: 0 !important;
-        line-height: 1.2 !important;
-        color: #2c3e50 !important;
+        line-height: 1.3 !important;
+        color: white !important;
+        position: relative;
+        z-index: 1;
+        padding: 16px 12px;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        letter-spacing: 0.3px;
     }
 
     .estacion-tipo {
-        font-size: 12px !important;
-        color: #7f8c8d !important;
-        margin: 0 !important;
-        font-weight: 500 !important;
+        font-size: 12.5px !important;
+        color: #475569 !important;
+        margin: 8px 0 !important;
+        font-weight: 600 !important;
+        padding: 0 12px;
     }
 
     .estacion-trabajo {
-        font-size: 11px !important;
-        background: rgba(52, 73, 94, 0.08) !important;
-        padding: 4px 7px !important;
-        border-radius: 3px !important;
-        margin: 0 !important;
-        max-width: 95% !important;
+        font-size: 11.5px !important;
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.12) 100%) !important;
+        padding: 6px 10px !important;
+        border-radius: 8px !important;
+        margin: 6px 12px !important;
+        max-width: calc(100% - 24px) !important;
         overflow: hidden !important;
         text-overflow: ellipsis !important;
         white-space: nowrap !important;
-        border: 1px solid rgba(52, 73, 94, 0.15) !important;
+        border: 1.5px solid rgba(37, 99, 235, 0.2) !important;
+        color: #1e40af !important;
+        font-weight: 600 !important;
+        box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
     }
 
     .estacion-pedido {
-        font-size: 11px !important;
-        color: #2980b9 !important;
-        margin: 0 !important;
+        font-size: 12px !important;
+        color: #2563eb !important;
+        margin: 4px 0 !important;
         font-weight: 700 !important;
+        padding: 0 12px;
     }
 
     .estacion-estado-badge {
         display: inline-block;
-        padding: 2px 5px;
-        border-radius: 3px;
-        font-size: 8px;
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 9px;
         font-weight: 700;
-        margin: 0;
-        letter-spacing: 0.2px;
+        margin: 4px 0;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-transform: uppercase;
     }
 
     /* Tarjeta de asignación */
@@ -542,65 +715,78 @@ include __DIR__ . '/app/views/header.php';
     }
 
     .estacion-header-turno {
-        padding: 8px;
-        background-color: #34495e;
+        padding: 16px 12px;
+        background: linear-gradient(135deg, var(--color-estacion, #334155) 0%, color-mix(in srgb, var(--color-estacion, #334155) 80%, white) 100%);
         color: white;
-        font-weight: bold;
-        font-size: 13px;
+        font-weight: 800;
+        font-size: 15px;
         text-align: center;
-        border-bottom: 1px solid #2c3e50;
-        min-height: 40px;
+        border: none;
+        min-height: 52px;
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        letter-spacing: 0.3px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
 
     .turnos-container {
         display: flex;
         flex-direction: column;
-        height: calc(220px - 40px);
+        height: calc(220px - 52px);
         width: 100%;
     }
 
     .turno-section {
         flex: 1;
-        border-bottom: 1px solid #bdc3c7;
+        border-bottom: 1.5px solid rgba(226, 232, 240, 0.6);
         display: flex;
         flex-direction: column;
         min-height: 58px;
         position: relative;
+        transition: background 0.2s;
     }
 
     .turno-section:last-child {
         border-bottom: none;
     }
 
+    .turno-section:hover {
+        background: linear-gradient(to right, rgba(37, 99, 235, 0.02), transparent);
+    }
+
     .turno-header {
-        padding: 5px 6px;
-        background-color: #ecf0f1;
-        border-bottom: 1px solid #bdc3c7;
-        font-weight: 600;
-        font-size: 10px;
-        color: #2c3e50;
+        padding: 6px 8px;
+        background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+        border-bottom: 1.5px solid rgba(226, 232, 240, 0.6);
+        font-weight: 700;
+        font-size: 10.5px;
+        color: #334155;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-height: 26px;
+        min-height: 28px;
+        letter-spacing: 0.3px;
     }
 
     .turno-tiempo {
-        font-size: 9px;
-        color: #7f8c8d;
+        font-size: 9.5px;
+        color: #64748b;
+        font-weight: 600;
     }
 
     .turno-content {
         flex: 1;
-        padding: 4px;
+        padding: 6px;
         overflow-y: auto;
         display: flex;
         flex-direction: column;
-        gap: 3px;
+        gap: 4px;
         droppable-area: true;
+        background: linear-gradient(to bottom, transparent, rgba(248, 250, 252, 0.3));
     }
 
     .turno-content.droppable {
@@ -608,66 +794,108 @@ include __DIR__ . '/app/views/header.php';
     }
 
     .turno-content.drop-hover {
-        background-color: rgba(52, 152, 219, 0.15) !important;
-        border: 1px dashed #3498db !important;
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(59, 130, 246, 0.12) 100%) !important;
+        border: 2px dashed #2563eb !important;
+        box-shadow: inset 0 0 12px rgba(37, 99, 235, 0.15);
     }
 
     .asignacion-turno-card {
-        background-color: #fff;
-        border: 1px solid #3498db;
-        border-left: 4px solid #3498db;
-        border-radius: 4px;
-        padding: 4px;
+        background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+        border: 1.5px solid rgba(37, 99, 235, 0.25);
+        border-left: 4px solid #2563eb;
+        border-radius: 8px;
+        padding: 6px 8px;
         cursor: move;
         font-size: 10px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        transition: all 0.2s;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
         flex-direction: column;
-        gap: 2px;
+        gap: 3px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .asignacion-turno-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 24px;
+        height: 24px;
+        background: linear-gradient(135deg, transparent 50%, rgba(37, 99, 235, 0.1) 50%);
+        border-radius: 0 0 0 24px;
     }
 
     .asignacion-turno-card:hover {
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-        border-left-color: #2980b9;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.08);
+        border-left-color: #1d4ed8;
+        transform: translateX(2px) translateY(-1px);
+        background: linear-gradient(145deg, #ffffff 0%, #eff6ff 100%);
     }
 
     .asignacion-turno-empleado {
-        font-weight: 600;
-        color: #2c3e50;
-        font-size: 10px;
-        line-height: 1.2;
+        font-weight: 700;
+        color: #1e293b;
+        font-size: 10.5px;
+        line-height: 1.3;
+        letter-spacing: 0.2px;
     }
 
     .asignacion-turno-pedido {
-        color: #7f8c8d;
-        font-size: 9px;
-        line-height: 1.1;
+        color: #64748b;
+        font-size: 9.5px;
+        line-height: 1.2;
+        font-weight: 500;
     }
 
     .asignacion-turno-tipo {
         display: inline-block;
-        padding: 1px 3px;
-        border-radius: 2px;
+        padding: 2px 6px;
+        border-radius: 6px;
         color: white;
-        font-size: 8px;
-        font-weight: 600;
-        background-color: #3498db;
+        font-size: 8.5px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
         width: fit-content;
+        letter-spacing: 0.3px;
+        box-shadow: 0 2px 4px rgba(37, 99, 235, 0.3);
+        text-transform: uppercase;
     }
 
     .asignacion-turno-cantidad {
-        font-size: 9px;
-        color: #7f8c8d;
-        line-height: 1.1;
+        font-size: 9.5px;
+        color: #64748b;
+        line-height: 1.2;
+        font-weight: 600;
     }
 
-    /* Botón configurar turnos */
+    /* Botón configurar turnos - REDISEÑADO */
     .btn-configurar-turnos {
         position: fixed;
-        bottom: 20px;
-        right: 20px;
+        bottom: 28px;
+        right: 28px;
         z-index: 1000;
+        padding: 14px 24px;
+        font-size: 14px;
+        font-weight: 700;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: white;
+        border: none;
+        box-shadow: 0 8px 24px rgba(245, 158, 11, 0.4), 0 4px 8px rgba(0, 0, 0, 0.15);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        letter-spacing: 0.3px;
+    }
+
+    .btn-configurar-turnos:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 12px 32px rgba(245, 158, 11, 0.5), 0 6px 12px rgba(0, 0, 0, 0.2);
+        background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    }
+
+    .btn-configurar-turnos:active {
+        transform: translateY(-2px) scale(1.02);
     }
 </style>
 
